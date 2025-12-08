@@ -1,0 +1,85 @@
+[project]
+name = "knowledgeflow-agent"
+version = "1.0.0"
+description = "企业知识库智能问答 Agent —— 混合检索 + 意图路由 + 多轮记忆 + 可评测的 RAG 服务平台"
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+
+dependencies = [
+    # --- LLM / HTTP ---
+    "httpx>=0.27",
+    # --- Web 服务 ---
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.30",
+    "python-multipart>=0.0.9",
+    # --- 配置 / 校验 ---
+    "pydantic>=2.7",
+    "python-dotenv>=1.0",
+    # --- 检索 ---
+    "numpy>=1.26",
+    "jieba>=0.42.1",
+    "rank-bm25>=0.2.2",
+    # --- Prompt 模板 ---
+    "jinja2>=3.1",
+    # --- CLI ---
+    "rich>=13.0",
+]
+
+# 本地语义检索（真实效果）：CPU 版 torch + sentence-transformers
+# 不装也能跑：EMBEDDING_BACKEND=hash 时使用确定性哈希向量（演示/CI 用）
+[project.optional-dependencies]
+ml = [
+    "torch>=2.4",
+    "sentence-transformers>=3.0",
+]
+# 可选向量库后端（默认 numpy 精确检索，装了才可切换 chroma）
+vector-db = ["chromadb>=0.5"]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.23",
+    "pytest-cov>=5.0",
+    "ruff>=0.6",
+    "mypy>=1.11",
+]
+
+[tool.uv]
+package = false
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cpu" }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q --strict-markers"
+markers = [
+    "slow: 需要真实模型或网络，默认不跑",
+    "ml: 需要安装 ML 依赖",
+]
+filterwarnings = ["ignore::DeprecationWarning"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+exclude = [".venv", "data", "docs"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "C4", "RET", "ASYNC"]
+ignore = ["B008"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["app"]
+
+[tool.mypy]
+python_version = "3.12"
+warn_unused_ignores = true
+ignore_missing_imports = true
+check_untyped_defs = true
+exclude = ["tests", "scripts", "chapters"]
