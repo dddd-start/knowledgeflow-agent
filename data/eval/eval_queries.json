@@ -1,0 +1,242 @@
+[
+  {
+    "query": "报销打款是每月几号",
+    "gold_doc": "doc-财务制度-费用报销流程",
+    "note": "关键词直球:打款批次",
+    "type": "keyword"
+  },
+  {
+    "query": "补卡一个月能补几次",
+    "gold_doc": "doc-人事制度-考勤管理制度",
+    "note": "关键词直球:忘打卡补救次数",
+    "type": "keyword"
+  },
+  {
+    "query": "年假最多能休多少天",
+    "gold_doc": "doc-人事制度-请假与休假制度",
+    "note": "关键词直球:年假上限",
+    "type": "keyword"
+  },
+  {
+    "query": "试用期多长时间",
+    "gold_doc": "doc-人事制度-入职与试用期管理",
+    "note": "关键词直球:试用期时长",
+    "type": "keyword"
+  },
+  {
+    "query": "每人每年的培训预算是多少钱",
+    "gold_doc": "doc-人事制度-员工培训与学习发展",
+    "note": "关键词直球:学习预算",
+    "type": "keyword"
+  },
+  {
+    "query": "一线城市住宿标准每晚上限多少",
+    "gold_doc": "doc-财务制度-差旅标准与出差申请",
+    "note": "关键词直球:住宿标准表",
+    "type": "keyword"
+  },
+  {
+    "query": "采购多少金额要三家比价",
+    "gold_doc": "doc-财务制度-采购与合同审批",
+    "note": "关键词直球:比价门槛",
+    "type": "keyword"
+  },
+  {
+    "query": "VPN 单次会话最长多久",
+    "gold_doc": "doc-IT服务-VPN与远程接入",
+    "note": "关键词直球:会话超时 8 小时",
+    "type": "keyword"
+  },
+  {
+    "query": "个人打印配额每月多少页",
+    "gold_doc": "doc-IT服务-打印机与办公设备",
+    "note": "关键词直球:打印配额",
+    "type": "keyword"
+  },
+  {
+    "query": "密码连续输错几次会锁定账号",
+    "gold_doc": "doc-IT服务-账号与权限管理",
+    "note": "关键词直球:锁定策略",
+    "type": "keyword"
+  },
+  {
+    "query": "云策 OA 包含哪些模块",
+    "gold_doc": "doc-产品手册-云策OA平台简介",
+    "note": "关键词直球:产品模块列表",
+    "type": "keyword"
+  },
+  {
+    "query": "V3.2.0 有哪些新功能",
+    "gold_doc": "doc-产品手册-版本发布说明",
+    "note": "关键词直球:版本功能",
+    "type": "keyword"
+  },
+  {
+    "query": "P1 工单多久响应",
+    "gold_doc": "doc-产品手册-客服支持与工单规范",
+    "note": "关键词直球:工单等级时限",
+    "type": "keyword"
+  },
+  {
+    "query": "私有化部署最低硬件配置",
+    "gold_doc": "doc-技术文档-私有化部署指南",
+    "note": "关键词直球:硬件要求",
+    "type": "keyword"
+  },
+  {
+    "query": "出差住酒店的钱公司怎么给我",
+    "gold_doc": "doc-财务制度-差旅标准与出差申请",
+    "note": "口语化改写:住宿费报销,原文无「给我」类表述",
+    "type": "paraphrase"
+  },
+  {
+    "query": "钱是自己先垫的,最晚什么时候必须提",
+    "gold_doc": "doc-财务制度-费用报销流程",
+    "note": "口语化:报销 30 天时限",
+    "type": "paraphrase"
+  },
+  {
+    "query": "早上老迟到会有什么后果",
+    "gold_doc": "doc-人事制度-考勤管理制度",
+    "note": "口语化:迟到与绩效",
+    "type": "paraphrase"
+  },
+  {
+    "query": "拿到 offer 去报到要带些什么",
+    "gold_doc": "doc-人事制度-入职与试用期管理",
+    "note": "口语化:入职材料清单",
+    "type": "paraphrase"
+  },
+  {
+    "query": "自己花钱去考个证能报多少",
+    "gold_doc": "doc-人事制度-员工培训与学习发展",
+    "note": "口语化:认证补贴比例",
+    "type": "paraphrase"
+  },
+  {
+    "query": "买台服务器得找谁签字",
+    "gold_doc": "doc-财务制度-采购与合同审批",
+    "note": "口语化:采购审批链",
+    "type": "paraphrase"
+  },
+  {
+    "query": "在家上不了公司内网怎么办",
+    "gold_doc": "doc-IT服务-VPN与远程接入",
+    "note": "口语化:远程接入故障",
+    "type": "paraphrase"
+  },
+  {
+    "query": "公司电脑丢了第一时间该做什么",
+    "gold_doc": "doc-安全合规-终端与密码安全规范",
+    "note": "口语化:设备丢失处置",
+    "type": "paraphrase"
+  },
+  {
+    "query": "新买的打印机怎么连到电脑上",
+    "gold_doc": "doc-IT服务-打印机与办公设备",
+    "note": "口语化:驱动安装",
+    "type": "paraphrase"
+  },
+  {
+    "query": "登录密码想不起来了怎么找回",
+    "gold_doc": "doc-IT服务-账号与权限管理",
+    "note": "口语化:忘记密码",
+    "type": "paraphrase"
+  },
+  {
+    "query": "标准版和企业版差在哪",
+    "gold_doc": "doc-产品手册-云策OA平台简介",
+    "note": "口语化:版本差异",
+    "type": "paraphrase"
+  },
+  {
+    "query": "系统大概多久发一个新版本",
+    "gold_doc": "doc-产品手册-版本发布说明",
+    "note": "口语化:发布节奏",
+    "type": "paraphrase"
+  },
+  {
+    "query": "客户半夜出故障了怎么找到人处理",
+    "gold_doc": "doc-产品手册-客服支持与工单规范",
+    "note": "口语化:7x24 支持与 P1",
+    "type": "paraphrase"
+  },
+  {
+    "query": "想把系统装在我们自己公司的服务器上,要准备什么",
+    "gold_doc": "doc-技术文档-私有化部署指南",
+    "note": "口语化:私有化部署前提",
+    "type": "paraphrase"
+  },
+  {
+    "query": "客户名单能随便拷到 U 盘带出去吗",
+    "gold_doc": "doc-安全合规-数据分级与保护规范",
+    "note": "口语化:数据导出与介质管控",
+    "type": "paraphrase"
+  },
+  {
+    "query": "发现公司数据被人恶意拷走了该找谁、怎么处理",
+    "gold_doc": "doc-安全合规-信息安全事件应急预案",
+    "note": "口语化:安全事件上报与处置",
+    "type": "paraphrase"
+  },
+  {
+    "query": "报销 12000 元要走几级审批,打款又是哪一天",
+    "gold_doc": "doc-财务制度-费用报销流程",
+    "note": "跨段落:审批层级表 + 打款批次",
+    "type": "multi_hop"
+  },
+  {
+    "query": "请 5 天年假需要谁批,年假天数又是怎么算的",
+    "gold_doc": "doc-人事制度-请假与休假制度",
+    "note": "跨段落:审批链路 + 年假规则",
+    "type": "multi_hop"
+  },
+  {
+    "query": "新同事入职当天要办哪些手续,账号多久能开通",
+    "gold_doc": "doc-人事制度-入职与试用期管理",
+    "note": "跨两篇:报到流程在入职文档,账号 T+0 在 IT 文档",
+    "type": "multi_hop"
+  },
+  {
+    "query": "生产环境发布前要检查什么,出问题多久必须回滚完",
+    "gold_doc": "doc-技术文档-发布与回滚流程",
+    "note": "跨段落:发布前清单 + 回滚 SLA",
+    "type": "multi_hop"
+  },
+  {
+    "query": "机密数据要导出给客户,需要谁审批,访问日志会留多久",
+    "gold_doc": "doc-安全合规-数据分级与保护规范",
+    "note": "跨段落:L3 导出审批 + 日志留存",
+    "type": "multi_hop"
+  },
+  {
+    "query": "我们 300 人的公司买企业版还是标准版,两版 API 限流差多少",
+    "gold_doc": "doc-产品手册-云策OA平台简介",
+    "note": "跨两篇:版本定位在产品简介,限流数值在 API 文档",
+    "type": "multi_hop"
+  },
+  {
+    "query": "我昨天在楼下咖啡店买了杯 38 块的拿铁自己喝的,另外上周去上海出差住酒店的钱怎么报,超过 600 一晚还能报吗",
+    "gold_doc": "doc-财务制度-差旅标准与出差申请",
+    "note": "噪音:拿铁是个人消费,真问题是一线城市住宿上限",
+    "type": "noisy"
+  },
+  {
+    "query": "我们团队 12 个人下周要给客户做演示,想打印 200 页彩色材料,彩色打印机在几层,额度又怎么算",
+    "gold_doc": "doc-IT服务-打印机与办公设备",
+    "note": "噪音:人数与演示无关,真问题是彩色机位置与配额折算",
+    "type": "noisy"
+  },
+  {
+    "query": "我朋友在别的公司做 HR,他们用的是另一套系统,我想问我们公司员工离职后邮箱还会保留多久、怎么转给交接人",
+    "gold_doc": "doc-IT服务-账号与权限管理",
+    "note": "噪音:别人家公司是干扰,真问题是离职账号停用与邮箱转发",
+    "type": "noisy"
+  },
+  {
+    "query": "最近在帮客户对接我们的开放平台,他们问 API 每分钟能调多少次、返回 429 该怎么处理,顺便问下他们用的是 Java 还是 Python 我也不确定",
+    "gold_doc": "doc-技术文档-接口与API接入说明",
+    "note": "噪音:客户语言偏好无关,真问题是限流与重试",
+    "type": "noisy"
+  }
+]
