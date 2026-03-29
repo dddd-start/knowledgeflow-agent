@@ -1,0 +1,12 @@
+{
+  "labels": [
+    "weather",
+    "calculator",
+    "datetime",
+    "kb_query",
+    "small_talk",
+    "complex_agent"
+  ],
+  "base_model": "huawei-noah/TinyBERT_4L_zh",
+  "eval_acc": 0.9621
+}

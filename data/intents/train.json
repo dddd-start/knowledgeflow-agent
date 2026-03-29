@@ -1,0 +1,2642 @@
+[
+  {
+    "text": "查一下上海天气",
+    "intent": "weather"
+  },
+  {
+    "text": "外面下雨了吗",
+    "intent": "weather"
+  },
+  {
+    "text": "查查天津这周末的天气",
+    "intent": "weather"
+  },
+  {
+    "text": "兰州今天天气怎么样",
+    "intent": "weather"
+  },
+  {
+    "text": "今天珠海有雨吗",
+    "intent": "weather"
+  },
+  {
+    "text": "常州今天天气怎么样",
+    "intent": "weather"
+  },
+  {
+    "text": "天津今天天气怎么样",
+    "intent": "weather"
+  },
+  {
+    "text": "大连明天要穿外套吗",
+    "intent": "weather"
+  },
+  {
+    "text": "明天成都会下雪吗",
+    "intent": "weather"
+  },
+  {
+    "text": "天津后天冷不冷",
+    "intent": "weather"
+  },
+  {
+    "text": "杭州今天天气怎么样",
+    "intent": "weather"
+  },
+  {
+    "text": "我想知道武汉明天的天气",
+    "intent": "weather"
+  },
+  {
+    "text": "大连今天适合出门吗",
+    "intent": "weather"
+  },
+  {
+    "text": "苏州明天会下雨吗",
+    "intent": "weather"
+  },
+  {
+    "text": "最近杭州天气如何",
+    "intent": "weather"
+  },
+  {
+    "text": "看看石家庄最近几天天气",
+    "intent": "weather"
+  },
+  {
+    "text": "今天大连有雨吗",
+    "intent": "weather"
+  },
+  {
+    "text": "查查太原这周末的天气",
+    "intent": "weather"
+  },
+  {
+    "text": "今天上海有雨吗",
+    "intent": "weather"
+  },
+  {
+    "text": "麻烦看下深圳今天几度",
+    "intent": "weather"
+  },
+  {
+    "text": "明天南宁会下雪吗",
+    "intent": "weather"
+  },
+  {
+    "text": "最近南京天气如何",
+    "intent": "weather"
+  },
+  {
+    "text": "南昌现在空气质量怎么样",
+    "intent": "weather"
+  },
+  {
+    "text": "我想知道海口明天的天气",
+    "intent": "weather"
+  },
+  {
+    "text": "福州明天要穿外套吗",
+    "intent": "weather"
+  },
+  {
+    "text": "武汉明天会下雨吗",
+    "intent": "weather"
+  },
+  {
+    "text": "济南明天最高气温多少",
+    "intent": "weather"
+  },
+  {
+    "text": "我想知道三亚明天的天气",
+    "intent": "weather"
+  },
+  {
+    "text": "重庆明天会下雨吗",
+    "intent": "weather"
+  },
+  {
+    "text": "成都今天适合出门吗",
+    "intent": "weather"
+  },
+  {
+    "text": "南京今天风大不大",
+    "intent": "weather"
+  },
+  {
+    "text": "乌鲁木齐现在空气质量怎么样",
+    "intent": "weather"
+  },
+  {
+    "text": "麻烦看下成都今天几度",
+    "intent": "weather"
+  },
+  {
+    "text": "帮我查一下深圳的天气",
+    "intent": "weather"
+  },
+  {
+    "text": "东莞今天风大不大",
+    "intent": "weather"
+  },
+  {
+    "text": "麻烦看下广州今天几度",
+    "intent": "weather"
+  },
+  {
+    "text": "沈阳今天适合出门吗",
+    "intent": "weather"
+  },
+  {
+    "text": "最近太原天气如何",
+    "intent": "weather"
+  },
+  {
+    "text": "我想知道苏州明天的天气",
+    "intent": "weather"
+  },
+  {
+    "text": "今天济南有雨吗",
+    "intent": "weather"
+  },
+  {
+    "text": "明天济南会下雪吗",
+    "intent": "weather"
+  },
+  {
+    "text": "深圳明天会下雨吗",
+    "intent": "weather"
+  },
+  {
+    "text": "郑州明天要穿外套吗",
+    "intent": "weather"
+  },
+  {
+    "text": "长春今天天气怎么样",
+    "intent": "weather"
+  },
+  {
+    "text": "苏州现在空气质量怎么样",
+    "intent": "weather"
+  },
+  {
+    "text": "南宁今天风大不大",
+    "intent": "weather"
+  },
+  {
+    "text": "武汉今天风大不大",
+    "intent": "weather"
+  },
+  {
+    "text": "西安今天风大不大",
+    "intent": "weather"
+  },
+  {
+    "text": "我想知道昆明明天的天气",
+    "intent": "weather"
+  },
+  {
+    "text": "苏州后天冷不冷",
+    "intent": "weather"
+  },
+  {
+    "text": "深圳今天天气怎么样",
+    "intent": "weather"
+  },
+  {
+    "text": "帮我查一下青岛的天气",
+    "intent": "weather"
+  },
+  {
+    "text": "成都明天会下雨吗",
+    "intent": "weather"
+  },
+  {
+    "text": "成都下周一会下雨吗",
+    "intent": "weather"
+  },
+  {
+    "text": "明天上海会下雪吗",
+    "intent": "weather"
+  },
+  {
+    "text": "最近苏州天气如何",
+    "intent": "weather"
+  },
+  {
+    "text": "麻烦看下贵阳今天几度",
+    "intent": "weather"
+  },
+  {
+    "text": "海口现在多少度",
+    "intent": "weather"
+  },
+  {
+    "text": "哈尔滨今天风大不大",
+    "intent": "weather"
+  },
+  {
+    "text": "我想知道宁波明天的天气",
+    "intent": "weather"
+  },
+  {
+    "text": "麻烦看下东莞今天几度",
+    "intent": "weather"
+  },
+  {
+    "text": "麻烦看下昆明今天几度",
+    "intent": "weather"
+  },
+  {
+    "text": "查查济南这周末的天气",
+    "intent": "weather"
+  },
+  {
+    "text": "珠海下周一会下雨吗",
+    "intent": "weather"
+  },
+  {
+    "text": "看看温州最近几天天气",
+    "intent": "weather"
+  },
+  {
+    "text": "最近乌鲁木齐天气如何",
+    "intent": "weather"
+  },
+  {
+    "text": "帮我查一下无锡的天气",
+    "intent": "weather"
+  },
+  {
+    "text": "广州今天紫外线强吗",
+    "intent": "weather"
+  },
+  {
+    "text": "看看三亚最近几天天气",
+    "intent": "weather"
+  },
+  {
+    "text": "厦门今天风大不大",
+    "intent": "weather"
+  },
+  {
+    "text": "今天昆明有雨吗",
+    "intent": "weather"
+  },
+  {
+    "text": "看看南京最近几天天气",
+    "intent": "weather"
+  },
+  {
+    "text": "帮我查一下南京的天气",
+    "intent": "weather"
+  },
+  {
+    "text": "看看西安最近几天天气",
+    "intent": "weather"
+  },
+  {
+    "text": "哈尔滨今天紫外线强吗",
+    "intent": "weather"
+  },
+  {
+    "text": "海口下周一会下雨吗",
+    "intent": "weather"
+  },
+  {
+    "text": "厦门明天会下雨吗",
+    "intent": "weather"
+  },
+  {
+    "text": "明天哈尔滨会下雪吗",
+    "intent": "weather"
+  },
+  {
+    "text": "南宁下周一会下雨吗",
+    "intent": "weather"
+  },
+  {
+    "text": "今天空气质量如何",
+    "intent": "weather"
+  },
+  {
+    "text": "明天出门需要带伞吗",
+    "intent": "weather"
+  },
+  {
+    "text": "沈阳明天最高气温多少",
+    "intent": "weather"
+  },
+  {
+    "text": "最近合肥天气如何",
+    "intent": "weather"
+  },
+  {
+    "text": "苏州明天要穿外套吗",
+    "intent": "weather"
+  },
+  {
+    "text": "天津今天紫外线强吗",
+    "intent": "weather"
+  },
+  {
+    "text": "成都明天最高气温多少",
+    "intent": "weather"
+  },
+  {
+    "text": "看看成都最近几天天气",
+    "intent": "weather"
+  },
+  {
+    "text": "南宁现在空气质量怎么样",
+    "intent": "weather"
+  },
+  {
+    "text": "帮我查一下郑州的天气",
+    "intent": "weather"
+  },
+  {
+    "text": "太原明天会下雨吗",
+    "intent": "weather"
+  },
+  {
+    "text": "兰州现在空气质量怎么样",
+    "intent": "weather"
+  },
+  {
+    "text": "帮我查查大连明晚的天气",
+    "intent": "weather"
+  },
+  {
+    "text": "哈尔滨今天适合出门吗",
+    "intent": "weather"
+  },
+  {
+    "text": "天津今天风大不大",
+    "intent": "weather"
+  },
+  {
+    "text": "长沙今天紫外线强吗",
+    "intent": "weather"
+  },
+  {
+    "text": "看看郑州最近几天天气",
+    "intent": "weather"
+  },
+  {
+    "text": "石家庄现在多少度",
+    "intent": "weather"
+  },
+  {
+    "text": "石家庄下周一会下雨吗",
+    "intent": "weather"
+  },
+  {
+    "text": "南京明天最高气温多少",
+    "intent": "weather"
+  },
+  {
+    "text": "南京今天适合出门吗",
+    "intent": "weather"
+  },
+  {
+    "text": "东莞今天紫外线强吗",
+    "intent": "weather"
+  },
+  {
+    "text": "哈尔滨明天要穿外套吗",
+    "intent": "weather"
+  },
+  {
+    "text": "昆明今天风大不大",
+    "intent": "weather"
+  },
+  {
+    "text": "北京今天紫外线强吗",
+    "intent": "weather"
+  },
+  {
+    "text": "济南现在多少度",
+    "intent": "weather"
+  },
+  {
+    "text": "长春现在多少度",
+    "intent": "weather"
+  },
+  {
+    "text": "佛山明天会下雨吗",
+    "intent": "weather"
+  },
+  {
+    "text": "今天三亚有雨吗",
+    "intent": "weather"
+  },
+  {
+    "text": "广州现在多少度",
+    "intent": "weather"
+  },
+  {
+    "text": "南京现在多少度",
+    "intent": "weather"
+  },
+  {
+    "text": "12.5 乘以 4 是多少",
+    "intent": "calculator"
+  },
+  {
+    "text": "总价 4500 打九折是多少",
+    "intent": "calculator"
+  },
+  {
+    "text": "6.5 + 12 这个式子怎么算",
+    "intent": "calculator"
+  },
+  {
+    "text": "128 * 7 等于多少",
+    "intent": "calculator"
+  },
+  {
+    "text": "麻烦算下 8600 / 5",
+    "intent": "calculator"
+  },
+  {
+    "text": "我想知道 6.5 + 12",
+    "intent": "calculator"
+  },
+  {
+    "text": "算算 6.5 + 12",
+    "intent": "calculator"
+  },
+  {
+    "text": "计算 5 * 73",
+    "intent": "calculator"
+  },
+  {
+    "text": "6800 - 4500 这个式子怎么算",
+    "intent": "calculator"
+  },
+  {
+    "text": "128 加 37 是多少",
+    "intent": "calculator"
+  },
+  {
+    "text": "麻烦算下 6800 + 8600",
+    "intent": "calculator"
+  },
+  {
+    "text": "计算 6800 + 8600",
+    "intent": "calculator"
+  },
+  {
+    "text": "680 * 6 结果是多少",
+    "intent": "calculator"
+  },
+  {
+    "text": "计算 128 * 7",
+    "intent": "calculator"
+  },
+  {
+    "text": "计算 36.8 * 5",
+    "intent": "calculator"
+  },
+  {
+    "text": "帮我算 12.6 + 3 等于几",
+    "intent": "calculator"
+  },
+  {
+    "text": "我想知道 1800 * 9",
+    "intent": "calculator"
+  },
+  {
+    "text": "1250 * 3 等于多少",
+    "intent": "calculator"
+  },
+  {
+    "text": "128 + 256 等于多少",
+    "intent": "calculator"
+  },
+  {
+    "text": "2400 * 8 这个式子怎么算",
+    "intent": "calculator"
+  },
+  {
+    "text": "2.8 * 5 是多少",
+    "intent": "calculator"
+  },
+  {
+    "text": "4500 / 3 等于多少",
+    "intent": "calculator"
+  },
+  {
+    "text": "256 / 4 是多少",
+    "intent": "calculator"
+  },
+  {
+    "text": "算算 4500 / 3",
+    "intent": "calculator"
+  },
+  {
+    "text": "计算 1250 + 1800",
+    "intent": "calculator"
+  },
+  {
+    "text": "帮我算一下 3.5 * 6",
+    "intent": "calculator"
+  },
+  {
+    "text": "128 * 7 这个式子怎么算",
+    "intent": "calculator"
+  },
+  {
+    "text": "2.8 + 5 这个式子怎么算",
+    "intent": "calculator"
+  },
+  {
+    "text": "我想知道 4500 * 8",
+    "intent": "calculator"
+  },
+  {
+    "text": "计算 4500 / 3",
+    "intent": "calculator"
+  },
+  {
+    "text": "我想知道 680 * 6",
+    "intent": "calculator"
+  },
+  {
+    "text": "麻烦算下 2400 / 16",
+    "intent": "calculator"
+  },
+  {
+    "text": "帮我算一下 1000 / 8",
+    "intent": "calculator"
+  },
+  {
+    "text": "4500 - 3200 等于多少",
+    "intent": "calculator"
+  },
+  {
+    "text": "计算 2400 - 1800",
+    "intent": "calculator"
+  },
+  {
+    "text": "口算一下 1800 / 6",
+    "intent": "calculator"
+  },
+  {
+    "text": "2.8 + 5 是多少",
+    "intent": "calculator"
+  },
+  {
+    "text": "750 + 980 结果是多少",
+    "intent": "calculator"
+  },
+  {
+    "text": "750 * 11 结果是多少",
+    "intent": "calculator"
+  },
+  {
+    "text": "帮我算 1250 + 1800 等于几",
+    "intent": "calculator"
+  },
+  {
+    "text": "24 乘以 15 是多少",
+    "intent": "calculator"
+  },
+  {
+    "text": "6.5 + 12 是多少",
+    "intent": "calculator"
+  },
+  {
+    "text": "算算 12.5 + 4",
+    "intent": "calculator"
+  },
+  {
+    "text": "我想知道 1800 + 2400",
+    "intent": "calculator"
+  },
+  {
+    "text": "帮我算 4500 + 6800 等于几",
+    "intent": "calculator"
+  },
+  {
+    "text": "帮我算 750 * 11 等于几",
+    "intent": "calculator"
+  },
+  {
+    "text": "口算一下 368 + 480",
+    "intent": "calculator"
+  },
+  {
+    "text": "计算 16 * 150",
+    "intent": "calculator"
+  },
+  {
+    "text": "麻烦算下 1250 + 1800",
+    "intent": "calculator"
+  },
+  {
+    "text": "麻烦算下 4 * 160",
+    "intent": "calculator"
+  },
+  {
+    "text": "4 * 160 等于多少",
+    "intent": "calculator"
+  },
+  {
+    "text": "我想知道 1800 / 6",
+    "intent": "calculator"
+  },
+  {
+    "text": "368 + 480 等于多少",
+    "intent": "calculator"
+  },
+  {
+    "text": "帮我算 4.25 * 8 等于几",
+    "intent": "calculator"
+  },
+  {
+    "text": "计算 1250 - 980",
+    "intent": "calculator"
+  },
+  {
+    "text": "计算 3.5 * 6",
+    "intent": "calculator"
+  },
+  {
+    "text": "我想知道 36.8 + 5",
+    "intent": "calculator"
+  },
+  {
+    "text": "算算 2400 * 8",
+    "intent": "calculator"
+  },
+  {
+    "text": "算算 750 - 680",
+    "intent": "calculator"
+  },
+  {
+    "text": "128 + 256 是多少",
+    "intent": "calculator"
+  },
+  {
+    "text": "帮我算 480 - 368 等于几",
+    "intent": "calculator"
+  },
+  {
+    "text": "2400 + 3200 是多少",
+    "intent": "calculator"
+  },
+  {
+    "text": "2400 + 3200 结果是多少",
+    "intent": "calculator"
+  },
+  {
+    "text": "帮我算一下 3200 + 4500",
+    "intent": "calculator"
+  },
+  {
+    "text": "口算一下 4500 * 8",
+    "intent": "calculator"
+  },
+  {
+    "text": "帮我算 256 + 368 等于几",
+    "intent": "calculator"
+  },
+  {
+    "text": "计算 368 - 256",
+    "intent": "calculator"
+  },
+  {
+    "text": "快速算一下 680 - 480",
+    "intent": "calculator"
+  },
+  {
+    "text": "3.5 + 6 结果是多少",
+    "intent": "calculator"
+  },
+  {
+    "text": "1000 / 8 结果是多少",
+    "intent": "calculator"
+  },
+  {
+    "text": "口算一下 256 / 4",
+    "intent": "calculator"
+  },
+  {
+    "text": "快速算一下 4500 / 3",
+    "intent": "calculator"
+  },
+  {
+    "text": "4.25 + 8 是多少",
+    "intent": "calculator"
+  },
+  {
+    "text": "快速算一下 680 * 6",
+    "intent": "calculator"
+  },
+  {
+    "text": "2400 / 3 是多少",
+    "intent": "calculator"
+  },
+  {
+    "text": "368 * 6 等于多少",
+    "intent": "calculator"
+  },
+  {
+    "text": "麻烦算下 1800 / 6",
+    "intent": "calculator"
+  },
+  {
+    "text": "我想知道 3200 / 8",
+    "intent": "calculator"
+  },
+  {
+    "text": "快速算一下 12.6 + 3",
+    "intent": "calculator"
+  },
+  {
+    "text": "750 * 11 是多少",
+    "intent": "calculator"
+  },
+  {
+    "text": "3200 * 3 是多少",
+    "intent": "calculator"
+  },
+  {
+    "text": "980 - 750 等于多少",
+    "intent": "calculator"
+  },
+  {
+    "text": "口算一下 1000 / 8",
+    "intent": "calculator"
+  },
+  {
+    "text": "计算 1800 + 2400",
+    "intent": "calculator"
+  },
+  {
+    "text": "1250 + 1800 等于多少",
+    "intent": "calculator"
+  },
+  {
+    "text": "我想知道 25 * 300",
+    "intent": "calculator"
+  },
+  {
+    "text": "帮我算一下 0.5 + 368",
+    "intent": "calculator"
+  },
+  {
+    "text": "12.6 + 3 是多少",
+    "intent": "calculator"
+  },
+  {
+    "text": "1800 / 6 结果是多少",
+    "intent": "calculator"
+  },
+  {
+    "text": "我想知道 750 * 11",
+    "intent": "calculator"
+  },
+  {
+    "text": "帮我算一下 8600 / 5",
+    "intent": "calculator"
+  },
+  {
+    "text": "帮我算一下 4500 - 3200",
+    "intent": "calculator"
+  },
+  {
+    "text": "我想知道 1250 + 1800",
+    "intent": "calculator"
+  },
+  {
+    "text": "帮我算一下 2400 + 3200",
+    "intent": "calculator"
+  },
+  {
+    "text": "麻烦算下 0.5 + 368",
+    "intent": "calculator"
+  },
+  {
+    "text": "365 / 5 是多少",
+    "intent": "calculator"
+  },
+  {
+    "text": "3.5 * 6 结果是多少",
+    "intent": "calculator"
+  },
+  {
+    "text": "帮我算一下 480 - 368",
+    "intent": "calculator"
+  },
+  {
+    "text": "帮我算 4500 - 3200 等于几",
+    "intent": "calculator"
+  },
+  {
+    "text": "3200 + 4500 这个式子怎么算",
+    "intent": "calculator"
+  },
+  {
+    "text": "12.6 * 3 这个式子怎么算",
+    "intent": "calculator"
+  },
+  {
+    "text": "口算一下 368 * 6",
+    "intent": "calculator"
+  },
+  {
+    "text": "口算一下 8600 - 6800",
+    "intent": "calculator"
+  },
+  {
+    "text": "0.5 * 368 结果是多少",
+    "intent": "calculator"
+  },
+  {
+    "text": "快速算一下 4500 * 8",
+    "intent": "calculator"
+  },
+  {
+    "text": "口算一下 3200 / 8",
+    "intent": "calculator"
+  },
+  {
+    "text": "我想知道 4500 - 3200",
+    "intent": "calculator"
+  },
+  {
+    "text": "快速算一下 6800 + 8600",
+    "intent": "calculator"
+  },
+  {
+    "text": "麻烦算下 1800 - 1250",
+    "intent": "calculator"
+  },
+  {
+    "text": "25 * 300 结果是多少",
+    "intent": "calculator"
+  },
+  {
+    "text": "今天周几",
+    "intent": "datetime"
+  },
+  {
+    "text": "现在什么时间",
+    "intent": "datetime"
+  },
+  {
+    "text": "今天几月几号",
+    "intent": "datetime"
+  },
+  {
+    "text": "我想知道今天星期几，在线等",
+    "intent": "datetime"
+  },
+  {
+    "text": "现在时间呢",
+    "intent": "datetime"
+  },
+  {
+    "text": "顺便问下现在是第几季度啊",
+    "intent": "datetime"
+  },
+  {
+    "text": "今天是本月的第几天，在线等",
+    "intent": "datetime"
+  },
+  {
+    "text": "我想知道几点了",
+    "intent": "datetime"
+  },
+  {
+    "text": "我想知道北京时间现在几点呢",
+    "intent": "datetime"
+  },
+  {
+    "text": "我想知道距离月底还有几天呢",
+    "intent": "datetime"
+  },
+  {
+    "text": "这个月最后一天是几号啊",
+    "intent": "datetime"
+  },
+  {
+    "text": "麻烦问一下这个月最后一天是几号？",
+    "intent": "datetime"
+  },
+  {
+    "text": "请问明天星期几？",
+    "intent": "datetime"
+  },
+  {
+    "text": "请问距离月底还有几天，在线等",
+    "intent": "datetime"
+  },
+  {
+    "text": "麻烦问一下距离月底还有几天？",
+    "intent": "datetime"
+  },
+  {
+    "text": "我想知道今天几月几号，在线等",
+    "intent": "datetime"
+  },
+  {
+    "text": "当前时间，谢谢",
+    "intent": "datetime"
+  },
+  {
+    "text": "顺便问下现在几点了，在线等",
+    "intent": "datetime"
+  },
+  {
+    "text": "顺便问下现在上午还是下午呀",
+    "intent": "datetime"
+  },
+  {
+    "text": "麻烦问一下当前时间呀",
+    "intent": "datetime"
+  },
+  {
+    "text": "请问上个月有多少天，在线等",
+    "intent": "datetime"
+  },
+  {
+    "text": "我想知道今天几号",
+    "intent": "datetime"
+  },
+  {
+    "text": "请问今天是什么日子？",
+    "intent": "datetime"
+  },
+  {
+    "text": "现在几时几分呢",
+    "intent": "datetime"
+  },
+  {
+    "text": "帮我看看现在是上午吗？",
+    "intent": "datetime"
+  },
+  {
+    "text": "今天几号呀",
+    "intent": "datetime"
+  },
+  {
+    "text": "我想知道明天是几月几号，谢谢",
+    "intent": "datetime"
+  },
+  {
+    "text": "麻烦问一下现在是上午吗？",
+    "intent": "datetime"
+  },
+  {
+    "text": "麻烦问一下明天星期几？",
+    "intent": "datetime"
+  },
+  {
+    "text": "现在几月",
+    "intent": "datetime"
+  },
+  {
+    "text": "我想知道现在几月，谢谢",
+    "intent": "datetime"
+  },
+  {
+    "text": "我想知道后天星期几",
+    "intent": "datetime"
+  },
+  {
+    "text": "麻烦问一下后天星期几啊",
+    "intent": "datetime"
+  },
+  {
+    "text": "这个月几号了，在线等",
+    "intent": "datetime"
+  },
+  {
+    "text": "我想知道现在几时几分？",
+    "intent": "datetime"
+  },
+  {
+    "text": "请问今天过到第几周了啊",
+    "intent": "datetime"
+  },
+  {
+    "text": "距离月底还有几天",
+    "intent": "datetime"
+  },
+  {
+    "text": "帮我看看现在上午还是下午呢",
+    "intent": "datetime"
+  },
+  {
+    "text": "帮我看看现在几点啊",
+    "intent": "datetime"
+  },
+  {
+    "text": "我想知道现在时间，谢谢",
+    "intent": "datetime"
+  },
+  {
+    "text": "我想知道今年还剩多少天啊",
+    "intent": "datetime"
+  },
+  {
+    "text": "我想知道本月有几天，谢谢",
+    "intent": "datetime"
+  },
+  {
+    "text": "请问现在几月呢",
+    "intent": "datetime"
+  },
+  {
+    "text": "顺便问下当前时间啊",
+    "intent": "datetime"
+  },
+  {
+    "text": "帮我看看今天是本月的第几天",
+    "intent": "datetime"
+  },
+  {
+    "text": "我想知道今天是什么日子，在线等",
+    "intent": "datetime"
+  },
+  {
+    "text": "现在时间呀",
+    "intent": "datetime"
+  },
+  {
+    "text": "请问今天几号了，谢谢",
+    "intent": "datetime"
+  },
+  {
+    "text": "请问现在几月呀",
+    "intent": "datetime"
+  },
+  {
+    "text": "帮我看看今天是工作日吗，在线等",
+    "intent": "datetime"
+  },
+  {
+    "text": "我想知道现在时间呀",
+    "intent": "datetime"
+  },
+  {
+    "text": "顺便问下上个月有多少天，谢谢",
+    "intent": "datetime"
+  },
+  {
+    "text": "顺便问下几点了呀",
+    "intent": "datetime"
+  },
+  {
+    "text": "请问明天星期几呀",
+    "intent": "datetime"
+  },
+  {
+    "text": "今天礼拜几",
+    "intent": "datetime"
+  },
+  {
+    "text": "顺便问下现在几点几分几秒",
+    "intent": "datetime"
+  },
+  {
+    "text": "麻烦问一下今天几号，在线等",
+    "intent": "datetime"
+  },
+  {
+    "text": "麻烦问一下后天几号呢",
+    "intent": "datetime"
+  },
+  {
+    "text": "麻烦问一下现在时间，在线等",
+    "intent": "datetime"
+  },
+  {
+    "text": "麻烦问一下明天是几月几号呀",
+    "intent": "datetime"
+  },
+  {
+    "text": "请问现在几月？",
+    "intent": "datetime"
+  },
+  {
+    "text": "请问上个月有多少天呢",
+    "intent": "datetime"
+  },
+  {
+    "text": "顺便问下本月有几天呀",
+    "intent": "datetime"
+  },
+  {
+    "text": "我想知道北京时间现在几点",
+    "intent": "datetime"
+  },
+  {
+    "text": "顺便问下今天是不是周五，在线等",
+    "intent": "datetime"
+  },
+  {
+    "text": "帮我看看今天是本月的第几天啊",
+    "intent": "datetime"
+  },
+  {
+    "text": "帮我看看今天是不是周五，谢谢",
+    "intent": "datetime"
+  },
+  {
+    "text": "请问现在时间是多少，在线等",
+    "intent": "datetime"
+  },
+  {
+    "text": "帮我看看今天是工作日吗，谢谢",
+    "intent": "datetime"
+  },
+  {
+    "text": "帮我看看几点了啊",
+    "intent": "datetime"
+  },
+  {
+    "text": "今天是工作日吗",
+    "intent": "datetime"
+  },
+  {
+    "text": "我想知道现在时间？",
+    "intent": "datetime"
+  },
+  {
+    "text": "今天是不是周五啊",
+    "intent": "datetime"
+  },
+  {
+    "text": "我想知道今天是工作日吗啊",
+    "intent": "datetime"
+  },
+  {
+    "text": "我想知道今天几号了呢",
+    "intent": "datetime"
+  },
+  {
+    "text": "我想知道今天是本月的第几天啊",
+    "intent": "datetime"
+  },
+  {
+    "text": "请问今天过到第几周了？",
+    "intent": "datetime"
+  },
+  {
+    "text": "麻烦问一下今天几号了？",
+    "intent": "datetime"
+  },
+  {
+    "text": "本月有几天呢",
+    "intent": "datetime"
+  },
+  {
+    "text": "帮我看看距离月底还有几天？",
+    "intent": "datetime"
+  },
+  {
+    "text": "顺便问下明天星期几呀",
+    "intent": "datetime"
+  },
+  {
+    "text": "麻烦问一下今天过到第几周了？",
+    "intent": "datetime"
+  },
+  {
+    "text": "这个月几号了",
+    "intent": "datetime"
+  },
+  {
+    "text": "顺便问下现在上午还是下午？",
+    "intent": "datetime"
+  },
+  {
+    "text": "帮我看看现在几点了，谢谢",
+    "intent": "datetime"
+  },
+  {
+    "text": "麻烦问一下现在时间是多少呀",
+    "intent": "datetime"
+  },
+  {
+    "text": "麻烦问一下后天几号",
+    "intent": "datetime"
+  },
+  {
+    "text": "顺便问下今天是什么日子呀",
+    "intent": "datetime"
+  },
+  {
+    "text": "帮我看看明天星期几？",
+    "intent": "datetime"
+  },
+  {
+    "text": "我想知道现在几点了？",
+    "intent": "datetime"
+  },
+  {
+    "text": "我想知道现在什么时间啊",
+    "intent": "datetime"
+  },
+  {
+    "text": "请问后天星期几，谢谢",
+    "intent": "datetime"
+  },
+  {
+    "text": "我想知道现在什么时间，在线等",
+    "intent": "datetime"
+  },
+  {
+    "text": "顺便问下北京时间现在几点",
+    "intent": "datetime"
+  },
+  {
+    "text": "我想知道几点了，在线等",
+    "intent": "datetime"
+  },
+  {
+    "text": "今天几号了，谢谢",
+    "intent": "datetime"
+  },
+  {
+    "text": "请问今天是什么日子呢",
+    "intent": "datetime"
+  },
+  {
+    "text": "我想知道今天是不是周五，谢谢",
+    "intent": "datetime"
+  },
+  {
+    "text": "我想知道这个月几号了",
+    "intent": "datetime"
+  },
+  {
+    "text": "今天礼拜几？",
+    "intent": "datetime"
+  },
+  {
+    "text": "帮我看看现在时间啊",
+    "intent": "datetime"
+  },
+  {
+    "text": "我想知道今年还剩多少天呀",
+    "intent": "datetime"
+  },
+  {
+    "text": "我想知道今天礼拜几呢",
+    "intent": "datetime"
+  },
+  {
+    "text": "顺便问下今天礼拜几，谢谢",
+    "intent": "datetime"
+  },
+  {
+    "text": "麻烦问一下现在时间是多少啊",
+    "intent": "datetime"
+  },
+  {
+    "text": "请问本月有几天",
+    "intent": "datetime"
+  },
+  {
+    "text": "帮我看看这个月最后一天是几号",
+    "intent": "datetime"
+  },
+  {
+    "text": "请问现在上午还是下午啊",
+    "intent": "datetime"
+  },
+  {
+    "text": "麻烦问一下现在几月，在线等",
+    "intent": "datetime"
+  },
+  {
+    "text": "我想知道现在上午还是下午，谢谢",
+    "intent": "datetime"
+  },
+  {
+    "text": "打卡时间是几点",
+    "intent": "kb_query"
+  },
+  {
+    "text": "打款批次是哪几天",
+    "intent": "kb_query"
+  },
+  {
+    "text": "年假上限多少天",
+    "intent": "kb_query"
+  },
+  {
+    "text": "采购预付款最多能付多少",
+    "intent": "kb_query"
+  },
+  {
+    "text": "内部转岗要满足什么条件",
+    "intent": "kb_query"
+  },
+  {
+    "text": "考勤申诉有几个工作日",
+    "intent": "kb_query"
+  },
+  {
+    "text": "签合同要经过哪些部门审核",
+    "intent": "kb_query"
+  },
+  {
+    "text": "Webhook 失败会重试几次",
+    "intent": "kb_query"
+  },
+  {
+    "text": "报销打款后在哪里查流水号",
+    "intent": "kb_query"
+  },
+  {
+    "text": "产假多少天",
+    "intent": "kb_query"
+  },
+  {
+    "text": "内部分享讲师有多少课酬",
+    "intent": "kb_query"
+  },
+  {
+    "text": "P2 工单多久恢复到",
+    "intent": "kb_query"
+  },
+  {
+    "text": "调休多久内必须用完",
+    "intent": "kb_query"
+  },
+  {
+    "text": "移动端能做哪些操作",
+    "intent": "kb_query"
+  },
+  {
+    "text": "备份保留多少天",
+    "intent": "kb_query"
+  },
+  {
+    "text": "外包能不能拿机密权限",
+    "intent": "kb_query"
+  },
+  {
+    "text": "hotfix 要补回归吗",
+    "intent": "kb_query"
+  },
+  {
+    "text": "报销单财务审核要几天",
+    "intent": "kb_query"
+  },
+  {
+    "text": "审批流程支持会签吗",
+    "intent": "kb_query"
+  },
+  {
+    "text": "安全培训多少分及格",
+    "intent": "kb_query"
+  },
+  {
+    "text": "供应链投毒怎么处理",
+    "intent": "kb_query"
+  },
+  {
+    "text": "对外通报谁负责",
+    "intent": "kb_query"
+  },
+  {
+    "text": "问答检索不到会怎么回复",
+    "intent": "kb_query"
+  },
+  {
+    "text": "安全培训一年多少小时",
+    "intent": "kb_query"
+  },
+  {
+    "text": "一线解决率要求多少",
+    "intent": "kb_query"
+  },
+  {
+    "text": "出差回来多久内要报销",
+    "intent": "kb_query"
+  },
+  {
+    "text": "试用期考核分几个阶段",
+    "intent": "kb_query"
+  },
+  {
+    "text": "出差总结要写多少字",
+    "intent": "kb_query"
+  },
+  {
+    "text": "丧假几天",
+    "intent": "kb_query"
+  },
+  {
+    "text": "入职材料不齐能先入职吗",
+    "intent": "kb_query"
+  },
+  {
+    "text": "知识库问答有几种模式",
+    "intent": "kb_query"
+  },
+  {
+    "text": "日志存在哪个目录",
+    "intent": "kb_query"
+  },
+  {
+    "text": "月度考勤汇总什么时候发布",
+    "intent": "kb_query"
+  },
+  {
+    "text": "服务月报什么时候出",
+    "intent": "kb_query"
+  },
+  {
+    "text": "工单关闭后几天回访",
+    "intent": "kb_query"
+  },
+  {
+    "text": "采购合同必须用标准模板吗",
+    "intent": "kb_query"
+  },
+  {
+    "text": "系统支持单点登录吗",
+    "intent": "kb_query"
+  },
+  {
+    "text": "培训记录在哪里看",
+    "intent": "kb_query"
+  },
+  {
+    "text": "出差补贴一天多少钱",
+    "intent": "kb_query"
+  },
+  {
+    "text": "核心协作时段是几点到几点",
+    "intent": "kb_query"
+  },
+  {
+    "text": "哺乳时间每天多久",
+    "intent": "kb_query"
+  },
+  {
+    "text": "背景调查多久出结果",
+    "intent": "kb_query"
+  },
+  {
+    "text": "请求超时怎么排查",
+    "intent": "kb_query"
+  },
+  {
+    "text": "分页每页最多多少条",
+    "intent": "kb_query"
+  },
+  {
+    "text": "采购台账谁来维护",
+    "intent": "kb_query"
+  },
+  {
+    "text": "Webhook 签名怎么校验",
+    "intent": "kb_query"
+  },
+  {
+    "text": "病假工资怎么算",
+    "intent": "kb_query"
+  },
+  {
+    "text": "值班多久确认告警",
+    "intent": "kb_query"
+  },
+  {
+    "text": "事假一年最多几天",
+    "intent": "kb_query"
+  },
+  {
+    "text": "旷工一天怎么扣工资",
+    "intent": "kb_query"
+  },
+  {
+    "text": "灰度比例怎么分批",
+    "intent": "kb_query"
+  },
+  {
+    "text": "版本号是怎么定的",
+    "intent": "kb_query"
+  },
+  {
+    "text": "导师带教期多长",
+    "intent": "kb_query"
+  },
+  {
+    "text": "导出 L3 数据要加什么",
+    "intent": "kb_query"
+  },
+  {
+    "text": "晋升评审一年几次",
+    "intent": "kb_query"
+  },
+  {
+    "text": "外部培训完要交什么",
+    "intent": "kb_query"
+  },
+  {
+    "text": "私有化部署支持哪几种方式",
+    "intent": "kb_query"
+  },
+  {
+    "text": "一线城市包括哪些",
+    "intent": "kb_query"
+  },
+  {
+    "text": "V3.3.0 计划什么时候发",
+    "intent": "kb_query"
+  },
+  {
+    "text": "高可用要几个节点",
+    "intent": "kb_query"
+  },
+  {
+    "text": "到货验收不合格怎么处理",
+    "intent": "kb_query"
+  },
+  {
+    "text": "已知问题在哪里看",
+    "intent": "kb_query"
+  },
+  {
+    "text": "云策 OA 支持哪些登录方式",
+    "intent": "kb_query"
+  },
+  {
+    "text": "财务多久抽检一次报销",
+    "intent": "kb_query"
+  },
+  {
+    "text": "学习预算单笔多少要加签",
+    "intent": "kb_query"
+  },
+  {
+    "text": "加班每天最多几小时",
+    "intent": "kb_query"
+  },
+  {
+    "text": "安全事件分几级",
+    "intent": "kb_query"
+  },
+  {
+    "text": "晋升答辩多长时间",
+    "intent": "kb_query"
+  },
+  {
+    "text": "年假能跨年吗",
+    "intent": "kb_query"
+  },
+  {
+    "text": "数据访问日志保留多久",
+    "intent": "kb_query"
+  },
+  {
+    "text": "标准版非工作时间工单什么时候处理",
+    "intent": "kb_query"
+  },
+  {
+    "text": "数据分成几个等级",
+    "intent": "kb_query"
+  },
+  {
+    "text": "错误码 403 是什么",
+    "intent": "kb_query"
+  },
+  {
+    "text": "新人训结营测评多少分及格",
+    "intent": "kb_query"
+  },
+  {
+    "text": "幂等键怎么用",
+    "intent": "kb_query"
+  },
+  {
+    "text": "勒索病毒要不要付赎金",
+    "intent": "kb_query"
+  },
+  {
+    "text": "遇到 429 怎么办",
+    "intent": "kb_query"
+  },
+  {
+    "text": "升级前必须做什么",
+    "intent": "kb_query"
+  },
+  {
+    "text": "预算执行率超了会怎样",
+    "intent": "kb_query"
+  },
+  {
+    "text": "报销流程要走哪几步",
+    "intent": "kb_query"
+  },
+  {
+    "text": "一级事件多久内止损",
+    "intent": "kb_query"
+  },
+  {
+    "text": "OA 日志保留多久",
+    "intent": "kb_query"
+  },
+  {
+    "text": "修订号版本升级要停机吗",
+    "intent": "kb_query"
+  },
+  {
+    "text": "出差买高铁一等座能报销吗",
+    "intent": "kb_query"
+  },
+  {
+    "text": "客户投诉怎么升级",
+    "intent": "kb_query"
+  },
+  {
+    "text": "固定资产怎么登记",
+    "intent": "kb_query"
+  },
+  {
+    "text": "转正答辩谁参加",
+    "intent": "kb_query"
+  },
+  {
+    "text": "金额超过多少会自动加签 VP",
+    "intent": "kb_query"
+  },
+  {
+    "text": "数据权限怎么控制",
+    "intent": "kb_query"
+  },
+  {
+    "text": "刷脸闸机打卡算数吗",
+    "intent": "kb_query"
+  },
+  {
+    "text": "处置记录保存几年",
+    "intent": "kb_query"
+  },
+  {
+    "text": "跨年费用最晚什么时候交",
+    "intent": "kb_query"
+  },
+  {
+    "text": "密码多久换一次",
+    "intent": "kb_query"
+  },
+  {
+    "text": "紧急修复要谁审批",
+    "intent": "kb_query"
+  },
+  {
+    "text": "发布后要验证哪些流程",
+    "intent": "kb_query"
+  },
+  {
+    "text": "请 10 天以上谁审批",
+    "intent": "kb_query"
+  },
+  {
+    "text": "发布窗口是周几",
+    "intent": "kb_query"
+  },
+  {
+    "text": "P1 工单要建群吗",
+    "intent": "kb_query"
+  },
+  {
+    "text": "事件复盘多久内完成",
+    "intent": "kb_query"
+  },
+  {
+    "text": "工单超时会不会升级",
+    "intent": "kb_query"
+  },
+  {
+    "text": "客户数据合同终止后多久删除",
+    "intent": "kb_query"
+  },
+  {
+    "text": "钓鱼演练多久一次",
+    "intent": "kb_query"
+  },
+  {
+    "text": "跨境传输要先做什么",
+    "intent": "kb_query"
+  },
+  {
+    "text": "报销金额拆分会怎么样",
+    "intent": "kb_query"
+  },
+  {
+    "text": "软件只能装白名单里的吗",
+    "intent": "kb_query"
+  },
+  {
+    "text": "员工数据离职后保留多久",
+    "intent": "kb_query"
+  },
+  {
+    "text": "不兼容变更怎么标注",
+    "intent": "kb_query"
+  },
+  {
+    "text": "高危补丁多久内安装",
+    "intent": "kb_query"
+  },
+  {
+    "text": "L3 数据默认授权多久",
+    "intent": "kb_query"
+  },
+  {
+    "text": "加班申请要在什么时候提",
+    "intent": "kb_query"
+  },
+  {
+    "text": "嗨",
+    "intent": "small_talk"
+  },
+  {
+    "text": "早上好",
+    "intent": "small_talk"
+  },
+  {
+    "text": "辛苦了",
+    "intent": "small_talk"
+  },
+  {
+    "text": "晚上好",
+    "intent": "small_talk"
+  },
+  {
+    "text": "上午好",
+    "intent": "small_talk"
+  },
+  {
+    "text": "下线了",
+    "intent": "small_talk"
+  },
+  {
+    "text": "心情不好",
+    "intent": "small_talk"
+  },
+  {
+    "text": "你是男的女的",
+    "intent": "small_talk"
+  },
+  {
+    "text": "有人在线吗",
+    "intent": "small_talk"
+  },
+  {
+    "text": "好困",
+    "intent": "small_talk"
+  },
+  {
+    "text": "加班加麻了",
+    "intent": "small_talk"
+  },
+  {
+    "text": "回头聊",
+    "intent": "small_talk"
+  },
+  {
+    "text": "在吗在吗",
+    "intent": "small_talk"
+  },
+  {
+    "text": "哈喽哈喽",
+    "intent": "small_talk"
+  },
+  {
+    "text": "你能陪我聊天吗",
+    "intent": "small_talk"
+  },
+  {
+    "text": "多谢",
+    "intent": "small_talk"
+  },
+  {
+    "text": "给我讲个故事",
+    "intent": "small_talk"
+  },
+  {
+    "text": "hello",
+    "intent": "small_talk"
+  },
+  {
+    "text": "鞠躬感谢",
+    "intent": "small_talk"
+  },
+  {
+    "text": "在忙吗",
+    "intent": "small_talk"
+  },
+  {
+    "text": "谢谢您",
+    "intent": "small_talk"
+  },
+  {
+    "text": "你喜欢什么",
+    "intent": "small_talk"
+  },
+  {
+    "text": "上班好没劲",
+    "intent": "small_talk"
+  },
+  {
+    "text": "你叫什么呀",
+    "intent": "small_talk"
+  },
+  {
+    "text": "你好在吗",
+    "intent": "small_talk"
+  },
+  {
+    "text": "我买了新手机",
+    "intent": "small_talk"
+  },
+  {
+    "text": "我升职了",
+    "intent": "small_talk"
+  },
+  {
+    "text": "你是谁",
+    "intent": "small_talk"
+  },
+  {
+    "text": "下午好",
+    "intent": "small_talk"
+  },
+  {
+    "text": "好的谢谢",
+    "intent": "small_talk"
+  },
+  {
+    "text": "谢了兄弟",
+    "intent": "small_talk"
+  },
+  {
+    "text": "好想放假",
+    "intent": "small_talk"
+  },
+  {
+    "text": "叹气",
+    "intent": "small_talk"
+  },
+  {
+    "text": "再见啦",
+    "intent": "small_talk"
+  },
+  {
+    "text": "多谢多谢",
+    "intent": "small_talk"
+  },
+  {
+    "text": "你是谁呀",
+    "intent": "small_talk"
+  },
+  {
+    "text": "今天好累啊",
+    "intent": "small_talk"
+  },
+  {
+    "text": "你会什么",
+    "intent": "small_talk"
+  },
+  {
+    "text": "帮我解解闷",
+    "intent": "small_talk"
+  },
+  {
+    "text": "你叫什么名字",
+    "intent": "small_talk"
+  },
+  {
+    "text": "困死了",
+    "intent": "small_talk"
+  },
+  {
+    "text": "又要上班了",
+    "intent": "small_talk"
+  },
+  {
+    "text": "明天见",
+    "intent": "small_talk"
+  },
+  {
+    "text": "忙不忙",
+    "intent": "small_talk"
+  },
+  {
+    "text": "下次再聊",
+    "intent": "small_talk"
+  },
+  {
+    "text": "哈喽",
+    "intent": "small_talk"
+  },
+  {
+    "text": "你有趣吗",
+    "intent": "small_talk"
+  },
+  {
+    "text": "我该睡觉了吗",
+    "intent": "small_talk"
+  },
+  {
+    "text": "你从哪里来",
+    "intent": "small_talk"
+  },
+  {
+    "text": "换个话题吧",
+    "intent": "small_talk"
+  },
+  {
+    "text": "晚上好呀",
+    "intent": "small_talk"
+  },
+  {
+    "text": "谢谢啦",
+    "intent": "small_talk"
+  },
+  {
+    "text": "太感谢了",
+    "intent": "small_talk"
+  },
+  {
+    "text": "拜拜啦",
+    "intent": "small_talk"
+  },
+  {
+    "text": "无聊啊",
+    "intent": "small_talk"
+  },
+  {
+    "text": "最近压力好大",
+    "intent": "small_talk"
+  },
+  {
+    "text": "我回来了",
+    "intent": "small_talk"
+  },
+  {
+    "text": "陪我聊会儿天",
+    "intent": "small_talk"
+  },
+  {
+    "text": "你几岁",
+    "intent": "small_talk"
+  },
+  {
+    "text": "我今天被夸了",
+    "intent": "small_talk"
+  },
+  {
+    "text": "晚安好梦",
+    "intent": "small_talk"
+  },
+  {
+    "text": "我emo了",
+    "intent": "small_talk"
+  },
+  {
+    "text": "累死了",
+    "intent": "small_talk"
+  },
+  {
+    "text": "说个笑话吧",
+    "intent": "small_talk"
+  },
+  {
+    "text": "谢谢",
+    "intent": "small_talk"
+  },
+  {
+    "text": "谢谢你的帮助",
+    "intent": "small_talk"
+  },
+  {
+    "text": "有人吗",
+    "intent": "small_talk"
+  },
+  {
+    "text": "谢啦",
+    "intent": "small_talk"
+  },
+  {
+    "text": "你好啊",
+    "intent": "small_talk"
+  },
+  {
+    "text": "心情不错",
+    "intent": "small_talk"
+  },
+  {
+    "text": "我今天好看吗",
+    "intent": "small_talk"
+  },
+  {
+    "text": "你会说笑话吗",
+    "intent": "small_talk"
+  },
+  {
+    "text": "感谢",
+    "intent": "small_talk"
+  },
+  {
+    "text": "我来啦",
+    "intent": "small_talk"
+  },
+  {
+    "text": "嗨喽",
+    "intent": "small_talk"
+  },
+  {
+    "text": "您好",
+    "intent": "small_talk"
+  },
+  {
+    "text": "你有名字吗",
+    "intent": "small_talk"
+  },
+  {
+    "text": "你会唱歌吗",
+    "intent": "small_talk"
+  },
+  {
+    "text": "晚安",
+    "intent": "small_talk"
+  },
+  {
+    "text": "你多大了",
+    "intent": "small_talk"
+  },
+  {
+    "text": "昨天没睡好",
+    "intent": "small_talk"
+  },
+  {
+    "text": "早啊",
+    "intent": "small_talk"
+  },
+  {
+    "text": "你能做什么",
+    "intent": "small_talk"
+  },
+  {
+    "text": "周末过得好快",
+    "intent": "small_talk"
+  },
+  {
+    "text": "麻烦你了",
+    "intent": "small_talk"
+  },
+  {
+    "text": "聊五毛钱的",
+    "intent": "small_talk"
+  },
+  {
+    "text": "无聊死了聊会儿",
+    "intent": "small_talk"
+  },
+  {
+    "text": "你在想什么",
+    "intent": "small_talk"
+  },
+  {
+    "text": "再见",
+    "intent": "small_talk"
+  },
+  {
+    "text": "你是不是AI",
+    "intent": "small_talk"
+  },
+  {
+    "text": "老板在吗",
+    "intent": "small_talk"
+  },
+  {
+    "text": "夸夸我",
+    "intent": "small_talk"
+  },
+  {
+    "text": "现在好安静",
+    "intent": "small_talk"
+  },
+  {
+    "text": "今天好开心",
+    "intent": "small_talk"
+  },
+  {
+    "text": "你是机器人吗",
+    "intent": "small_talk"
+  },
+  {
+    "text": "你好呀",
+    "intent": "small_talk"
+  },
+  {
+    "text": "早上好呀",
+    "intent": "small_talk"
+  },
+  {
+    "text": "你信星座吗",
+    "intent": "small_talk"
+  },
+  {
+    "text": "太感谢啦",
+    "intent": "small_talk"
+  },
+  {
+    "text": "不聊了",
+    "intent": "small_talk"
+  },
+  {
+    "text": "周末去哪玩比较好",
+    "intent": "small_talk"
+  },
+  {
+    "text": "我发现我胖了",
+    "intent": "small_talk"
+  },
+  {
+    "text": "有什么好电影推荐",
+    "intent": "small_talk"
+  },
+  {
+    "text": "中午好",
+    "intent": "small_talk"
+  },
+  {
+    "text": "你是云策的员工吗",
+    "intent": "small_talk"
+  },
+  {
+    "text": "今天状态不太行",
+    "intent": "small_talk"
+  },
+  {
+    "text": "我有点焦虑",
+    "intent": "small_talk"
+  },
+  {
+    "text": "收到谢谢",
+    "intent": "small_talk"
+  },
+  {
+    "text": "你聪明吗",
+    "intent": "small_talk"
+  },
+  {
+    "text": "开心",
+    "intent": "small_talk"
+  },
+  {
+    "text": "对比标准版和企业版的部署方式，然后告诉我 300 人的公司该选哪个",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "帮我把入职当天要办的事和需要准备的材料整理成清单，再查一下账号什么时候开通",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "算一下 12.5 乘以 4，另外帮我查一下报销 15000 元要谁审批",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "差旅补贴一天多少，另外想知道客户要导出全部数据怎么处理",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "先算一下 12.5 乘以 4，再回答V3.2.0 有哪些新功能",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "帮我算一下 128 乘以 7，顺便说说高危补丁多久内装完",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "旷工一天怎么扣工资，还有差旅补贴一天多少",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "采购 8 万元要经过谁审批，还有报销多少天必须提交",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "私有化部署最低配置是什么，还有采购 8 万元要经过谁审批",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "年假有几天怎么算，另外想知道日志保留多少天",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "今天星期几，另外帮我查一下出差住宿标准是多少",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "差旅补贴一天多少，同时帮我算一下 128 乘以 7",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "报销 15000 元要谁审批，另外想知道主版本维护多久",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "我想知道打印配额是多少，也想让你查一下广州现在几度",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "打印配额是多少，另外想知道试用期工资是转正后多少",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "需求冻结是什么时候，还有入职要准备哪些材料",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "帮我算算 1800 打八折是多少，顺便说说试用期工资是转正后多少",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "帮我看看杭州今晚会不会下雨，顺便说说标准版和企业版有什么区别",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "私有化部署最低配置是什么，另外想知道VPN 会话多久超时",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "试用期工资是转正后多少，还有回滚要在多久内完成",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "出差住宿标准是多少，另外想知道账号连续输错几次会锁定",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "API 每分钟能调多少次，另外想知道差旅补贴一天多少",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "先查查上海今天的天气，再回答日志保留多少天",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "我想知道报销多少天必须提交，也想让你查一下北京明天的天气",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "先查一下广州现在几度，再回答标准版和企业版有什么区别",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "先今天几号，再回答API 每分钟能调多少次",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "出差住宿标准是多少，还有年假有几天怎么算",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "入职要准备哪些材料，还有V3.2.0 有哪些新功能",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "补卡一个月能补几次，还有VPN 会话多久超时",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "回滚要在多久内完成，同时帮我查一下西安这周末的天气",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "帮我今天星期几，顺便说说报销多少天必须提交",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "查一下成都明天的天气，另外帮我查一下私有化部署最低配置是什么",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "先算一下 45 加 67 再减 32，再回答婚假有几天",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "高危补丁多久内装完，另外想知道补卡一个月能补几次",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "现在几点，然后告诉我钓鱼演练多久一次",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "V3.2.0 有哪些新功能，另外想知道婚假有几天",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "日志保留多少天，同时帮我看看杭州今晚会不会下雨",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "P1 故障多久必须恢复，还有客户要导出全部数据怎么处理",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "帮我查一下北京明天的天气，顺便说说标准版和企业版有什么区别",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "补卡一个月能补几次，另外想知道试用期工资是转正后多少",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "标准版和企业版有什么区别，还有API 每分钟能调多少次",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "查一下西安这周末的天气，然后告诉我需求冻结是什么时候",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "账号连续输错几次会锁定，另外想知道发布窗口是周几",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "先今天几号，再回答出差住宿标准是多少",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "查一下广州现在几度，然后告诉我试用期工资是转正后多少",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "帮我现在几点，顺便说说婚假有几天",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "帮我看看杭州今晚会不会下雨，顺便说说账号连续输错几次会锁定",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "查一下广州现在几度，然后告诉我出差住宿标准是多少",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "帮我今天几号，顺便说说考勤汇总什么时候发布",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "看看杭州今晚会不会下雨，然后告诉我报销多少天必须提交",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "查一下广州现在几度，然后告诉我招待客户人均上限多少",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "查查上海今天的天气，然后告诉我V3.2.0 有哪些新功能",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "试用期工资是转正后多少，还有打印配额是多少",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "我想知道年假有几天怎么算，也想让你算一下 12.5 乘以 4",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "私有化部署最低配置是什么，另外想知道P1 故障多久必须恢复",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "旷工一天怎么扣工资，同时帮我算算 1800 打八折是多少",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "今天几号，另外帮我查一下病假需要什么证明",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "我想知道主版本维护多久，也想让你今天几号",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "查一下成都明天的天气，然后告诉我主版本维护多久",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "算算 3200 除以 8，另外帮我查一下P1 故障多久必须恢复",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "查一下北京明天的天气，然后告诉我标准版和企业版有什么区别",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "API 每分钟能调多少次，另外想知道招待客户人均上限多少",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "先查一下广州现在几度，再回答钓鱼演练多久一次",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "试用期工资是转正后多少，同时帮我今天几号",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "计算 156 加 289，另外帮我查一下回滚要在多久内完成",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "旷工一天怎么扣工资，另外想知道私有化部署最低配置是什么",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "客户要导出全部数据怎么处理，还有婚假有几天",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "先计算 156 加 289，再回答试用期工资是转正后多少",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "先今天星期几，再回答招待客户人均上限多少",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "主版本维护多久，另外想知道高危补丁多久内装完",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "L3 数据导出要谁批，另外想知道API 每分钟能调多少次",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "帮我算一下 128 乘以 7，顺便说说补卡一个月能补几次",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "P1 故障多久必须恢复，同时帮我查一下广州现在几度",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "先今天几号，再回答高危补丁多久内装完",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "L3 数据导出要谁批，还有打印配额是多少",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "帮我查一下北京明天的天气，顺便说说婚假有几天",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "我想知道API 每分钟能调多少次，也想让你算一下 12.5 乘以 4",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "先算算 1800 打八折是多少，再回答打印配额是多少",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "算算 1800 打八折是多少，另外帮我查一下打印配额是多少",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "招待客户人均上限多少，同时帮我查一下成都明天的天气",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "先查查上海今天的天气，再回答年假有几天怎么算",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "我想知道打印配额是多少，也想让你帮我算 980 减 367",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "查一下广州现在几度，然后告诉我婚假有几天",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "先算一下 128 乘以 7，再回答V3.2.0 有哪些新功能",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "帮我算算 1800 打八折是多少，顺便说说高危补丁多久内装完",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "现在几点，然后告诉我P1 故障多久必须恢复",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "算一下 45 加 67 再减 32，另外帮我查一下高危补丁多久内装完",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "帮我查一下北京明天的天气，顺便说说需求冻结是什么时候",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "高危补丁多久内装完，还有发布窗口是周几",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "入职要准备哪些材料，另外想知道L3 数据导出要谁批",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "查一下西安这周末的天气，然后告诉我API 每分钟能调多少次",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "算一下 45 加 67 再减 32，然后告诉我L3 数据导出要谁批",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "查一下广州现在几度，然后告诉我报销多少天必须提交",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "入职要准备哪些材料，另外想知道打印配额是多少",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "入职要准备哪些材料，还有报销 15000 元要谁审批",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "算一下 12.5 乘以 4，然后告诉我私有化部署最低配置是什么",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "先查一下北京明天的天气，再回答报销多少天必须提交",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "我想知道发布窗口是周几，也想让你帮我算 980 减 367",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "我想知道打印配额是多少，也想让你算一下 45 加 67 再减 32",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "先算一下 45 加 67 再减 32，再回答入职要准备哪些材料",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "我想知道报销多少天必须提交，也想让你帮我算 980 减 367",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "报销 15000 元要谁审批，另外想知道年假最多能休多少天",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "招待客户人均上限多少，还有出差住宿标准是多少",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "L3 数据导出要谁批，还有采购 8 万元要经过谁审批",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "日志保留多少天，同时帮我算一下 12.5 乘以 4",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "先算算 1800 打八折是多少，再回答考勤汇总什么时候发布",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "帮我查一下西安这周末的天气，顺便说说高危补丁多久内装完",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "旷工一天怎么扣工资，同时帮我算一下 12.5 乘以 4",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "今天几号，另外帮我查一下试用期工资是转正后多少",
+    "intent": "complex_agent"
+  },
+  {
+    "text": "差旅补贴一天多少，同时帮我现在几点",
+    "intent": "complex_agent"
+  }
+]
