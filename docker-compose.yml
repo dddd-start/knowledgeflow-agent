@@ -1,0 +1,35 @@
+# 一键演示:docker compose up --build
+# 有 .env 里的 LLM_API_KEY 就走真实模型;没有则自动离线 Mock 演示。
+services:
+  knowledgeflow:
+    build:
+      context: .
+      args:
+        INSTALL_ML: "1"
+    image: knowledgeflow-agent:latest
+    ports:
+      - "8000:8000"
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      HOST: 0.0.0.0
+      PORT: 8000
+      LLM_BACKEND: ${LLM_BACKEND:-auto}
+      EMBEDDING_BACKEND: ${EMBEDDING_BACKEND:-auto}
+      VECTOR_BACKEND: numpy
+      LOG_LEVEL: ${LOG_LEVEL:-INFO}
+    volumes:
+      - kf-index:/app/data/index
+      - kf-memory:/app/data/memory
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request;urllib.request.urlopen('http://127.0.0.1:8000/api/health')"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 40s
+    restart: unless-stopped
+
+volumes:
+  kf-index:
+  kf-memory:

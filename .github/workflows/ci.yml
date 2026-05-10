@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      # 离线确定性:不调用真实模型、不用深度学习依赖,CI 中秒级完成
+      LLM_BACKEND: mock
+      EMBEDDING_BACKEND: hash
+      VECTOR_BACKEND: numpy
+      RERANK_ENABLED: "false"
+      WARMUP: "false"
+      APP_ENV: test
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          python-version: "3.12"
+      - name: 安装依赖(核心 + 测试工具)
+        run: uv sync --group dev
+      - name: 代码风格与静态检查
+        run: |
+          uv run ruff check app scripts tests
+          uv run ruff format --check app scripts tests
+      - name: 类型检查(尽力而为,不阻塞)
+        continue-on-error: true
+        run: uv run mypy app
+      - name: 单元测试
+        run: uv run pytest -q --cov=app --cov-report=term-missing
+
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: 构建镜像(核心依赖,不含 ML)
+        run: docker build --build-arg INSTALL_ML=0 -t knowledgeflow:ci .
