@@ -20,6 +20,15 @@
                         带 [编号] 引用的回答 + 检索链路可回放 + token/成本计量
 ```
 
+## 演示视频
+
+[▶ 观看 65 秒完整演示（MP4，2.5MB）](docs/assets/demo.mp4)
+
+![演示动图](docs/assets/demo.gif)
+
+> 从提问 → 流式回答 → 点引用看原文 → 高质量模式自检 → Agent 工具调用 → 知识库分块 → 架构说明，全程真实模型跑通，无剪辑。
+> 自己录一份：`make demo-video`（脚本见 [scripts/record_demo.py](scripts/record_demo.py)）。
+
 ## 界面
 
 | 对话 + 检索链路（quality 模式） | Agent 工具循环 |

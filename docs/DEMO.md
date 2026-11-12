@@ -112,3 +112,20 @@ python -m app.cli.main -q "报销打款是每月几号" --mode quality --no-stre
 curl -N -X POST http://127.0.0.1:8000/api/chat -H 'Content-Type: application/json' \
   -d '{"message":"报销打款是每月几号","mode":"fast","stream":true}'
 ```
+
+## 8. 录制演示视频（可选）
+
+```bash
+uv pip install playwright imageio-ffmpeg
+.venv/bin/python -m playwright install chromium     # 只装一次
+make demo-video                                      # 或 python scripts/record_demo.py
+```
+
+脚本会真实操作页面（点演示问题、点引用、切模式、进知识库/关于页），并注入
+"光标 + 点击涟漪 + 字幕条 + 片头卡"，输出：
+
+- `docs/assets/demo.mp4`：H.264，适合发微信/简历附件/GitHub 链接；
+- `docs/assets/demo.gif`：README 里自动播放的压缩版；
+- `docs/assets/demo-poster.png`：封面图。
+
+录制全程约 70~90 秒（取决于模型延迟），会真实消耗 3 次问答的 token。

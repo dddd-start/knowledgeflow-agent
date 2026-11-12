@@ -4,7 +4,7 @@ PY := .venv/bin/python
 UV := uv
 PORT ?= 8000
 
-.PHONY: setup seed run dev cli test lint fmt eval bench train-intent demo clean help
+.PHONY: setup seed run dev cli test lint fmt eval bench train-intent demo demo-video clean help
 
 help:
 	@echo "make setup        安装依赖(uv sync --extra ml)"
@@ -17,6 +17,7 @@ help:
 	@echo "make eval         检索消融评测(生成 docs/EVALUATION.md 数据)"
 	@echo "make bench        延迟基准测试"
 	@echo "make train-intent 微调意图分类模型"
+	@echo "make demo-video    录制演示视频(MP4/GIF,需 playwright)"
 
 setup:
 	$(UV) sync --python 3.12 --extra ml --group dev
@@ -55,6 +56,10 @@ bench:
 
 train-intent:
 	$(PY) scripts/train_intent.py
+
+demo-video:
+	@$(PY) -c "import playwright" 2>/dev/null || (echo "需要先装录制依赖: uv pip install playwright imageio-ffmpeg && .venv/bin/python -m playwright install chromium"; exit 1)
+	$(PY) scripts/record_demo.py
 
 demo: seed run
 

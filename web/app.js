@@ -2728,7 +2728,7 @@
     const modeRows = [
       ['auto', '自动', '意图分类 + 置信度阈值,自动选择最省成本的路径。'],
       ['fast', 'rag', '混合检索 + RRF 融合直接生成,延迟最低,演示现场首选。'],
-      ['quality', 'rag', '改写 + HyDE + 重排 + 自检全开,质量优先,会多花几次 LLM 调用。'],
+      ['quality', 'rag', MODE_META.quality.desc],
       ['agent', 'agent', '工具循环:模型自主调用 kb_search / kb_read 等,最多若干轮。'],
       ['agentic', 'agentic', '迭代检索:每轮判断证据充分性,不足则生成补检查询继续检索。']
     ];
