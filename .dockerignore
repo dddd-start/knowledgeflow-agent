@@ -1,0 +1,12 @@
+.venv
+.git
+.github
+data/index
+data/chroma
+data/memory
+logs
+eval
+docs
+tests
+__pycache__
+*.pyc

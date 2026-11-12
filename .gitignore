@@ -1,0 +1,27 @@
+# ---------- 密钥 ----------
+.env
+.env.local
+
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+.venv*/
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# ---------- 运行期生成 ----------
+data/index/
+data/chroma/
+data/memory/
+logs/
+*.log
+
+# ---------- 前端/IDE ----------
+.idea/
+.vscode/
+.DS_Store
+.pw-browsers/
