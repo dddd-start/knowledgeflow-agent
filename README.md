@@ -1,13 +1,13 @@
 # KnowledgeFlow · 企业知识库智能问答 Agent
 
 把散落的企业文档（制度、流程、产品手册、部署文档）变成**可溯源、可评测、可运营**的问答服务：
-混合检索 + 意图路由 + Agent 工具循环 + Agentic 迭代检索 + 幻觉自检，一条 Java 后端工程师用 Python 从 0 到 1 独立实现的完整链路。
+混合检索 + 意图路由 + Agent 工具循环 + Agentic 迭代检索 + 幻觉自检——一个 Java 后端工程师用 Python 从 0 到 1 独立实现的完整工程。
 
-> 在线演示与完整评测见 [docs/EVALUATION.md](docs/EVALUATION.md)、[docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)；
-> 面试讲解稿、简历 bullet、30 道深挖题见 [docs/INTERVIEW.md](docs/INTERVIEW.md)。
+> 评测方法与全部数据见 [docs/EVALUATION.md](docs/EVALUATION.md)，架构与取舍见 [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) / [docs/DECISIONS.md](docs/DECISIONS.md)；
+> 3 分钟讲稿、38 道深挖题、演示脚本、简历 bullet 见 [docs/INTERVIEW.md](docs/INTERVIEW.md)、[docs/DEMO.md](docs/DEMO.md)、[docs/RESUME.md](docs/RESUME.md)。
 
 ```
-告警/提问 ─► 意图路由 ─┬─ fast   → 确定性工具(天气/计算/时间)      0 次 LLM
+用户提问 ─► 意图路由 ─┬─ fast   → 确定性工具(天气/计算/时间)      0 次 LLM
                       ├─ chat   → 闲聊                              1 次 LLM
                       ├─ rag    → 混合检索 → 生成 → 自检            3 次 LLM
                       ├─ agent  → Function Calling 工具循环(≤3 轮)  1~4 次 LLM
