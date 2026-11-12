@@ -48,7 +48,7 @@ git clone <repo-url> && cd knowledgeflow-agent
 make setup          # uv sync --python 3.12 --extra ml --group dev
 make seed           # 文档 -> 分块 -> 向量 + BM25 索引
 make run            # http://127.0.0.1:8000
-make test           # 100 个离线测试(不联网、不花钱)
+make test           # 103 个离线测试(不联网、不花钱)
 ```
 
 ## 它解决什么问题
@@ -72,7 +72,7 @@ make test           # 100 个离线测试(不联网、不花钱)
 5. **Agentic RAG**：检索由 Agent 主动驱动，judge 判断证据是否充分，不充分就带"缺什么"的反馈改写再查。
 6. **幻觉自检**：把草稿与检索证据交给独立调用做事实核查，`supported / partial / unsupported` 三态，unsupported 直接拒答。
 7. **混合记忆**：滑动窗口 + 超阈值摘要压缩（token 有上界）+ SQLite 长期偏好 + 话题漂移检测。
-8. **工程化**：SSE 流式、请求级 trace（阶段耗时/候选/分数）、`/metrics`、100 个离线测试、GitHub Actions、Docker Compose、systemd/nginx 部署样例、prompt 版本化与热加载。
+8. **工程化**：SSE 流式、请求级 trace（阶段耗时/候选/分数）、`/metrics`、103 个离线测试、GitHub Actions、Docker Compose、systemd/nginx 部署样例、prompt 版本化与热加载。
 
 ## 一次问答发生了什么
 
@@ -120,7 +120,7 @@ sequenceDiagram
 结论与取舍（详见 [docs/EVALUATION.md](docs/EVALUATION.md)）：语义检索补上了关键词检索对"口语化改写"的短板——paraphrase 类 Top-1 从 BM25 的 31% 提升到混合+改写后的 **81%**；HyDE 只带来 +2.5pt 却多花 3s，重排在当前语料上反而 -2.5pt，所以两者默认关闭、保留为开关（有数据支撑的"不用"）。
 
 意图分类：TinyBERT 微调 95s，eval 132 条准确率 **96.2%**（规则基线 59.9%，同数据集）；单条推理约 50ms，远低于一次 LLM 调用。
-端到端：一次问答 P50/P95 延迟、平均 token、单次成本见 `eval/report-e2e.json`。
+端到端（真实模型）：quality 模式 40 条问题，**引用命中 @3 = 97.5%**、库外问题**拒答率 100%**，延迟 P50 10.4s / P95 14.5s，单次成本约 $0.0009；fast 模式 P50 4.6s、拒答率 83%——自检的收益和代价都能量化。
 
 ## 目录结构
 
@@ -141,7 +141,7 @@ app/
 └── cli/                # 命令行:6 种模式交互
 web/                    # 演示前端(原生 JS,无构建、无 CDN)
 scripts/                # 入库 / 检索消融 / 端到端评测 / 基准 / 意图训练与评测
-tests/                  # 100 个离线测试
+tests/                  # 103 个离线测试
 deploy/                 # systemd / nginx 样例
 docs/                   # 架构 / ADR / 评测 / 面试 / 演示脚本 / API 契约
 data/                   # raw 语料(19 篇原创) + 检索/拒答/意图评测集
@@ -149,7 +149,7 @@ data/                   # raw 语料(19 篇原创) + 检索/拒答/意图评测�
 
 ## 质量保障
 
-- **100 个离线测试**：`pytest -q` 全绿，覆盖分块、RRF、BM25、向量库、工具安全（AST 白名单）、Agent 轮数上限、记忆压缩、意图路由、自检拒答、API/SSE。
+- **103 个离线测试**：`pytest -q` 全绿，覆盖分块、RRF、BM25、向量库、工具安全（AST 白名单）、Agent 轮数上限、记忆压缩、意图路由、自检拒答、API/SSE。
 - **CI**：ruff + mypy + pytest + Docker 构建（`.github/workflows/ci.yml`）。
 - **可观测**：每个请求有 `request_id`、阶段耗时、token、成本；`GET /metrics` 输出 Prometheus 文本。
 - **可复现**：所有评测脚本固定随机性、离线可跑；`eval/report-*.json` 为原始数据。

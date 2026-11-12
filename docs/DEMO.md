@@ -73,7 +73,7 @@ curl -s http://127.0.0.1:8000/api/meta | head -c 300
 ```bash
 cat eval/report-retrieval.json | head -40     # 六组消融
 cat eval/report-e2e.json | python -m json.tool | head -30
-python -m pytest -q                            # 100 个离线测试
+python -m pytest -q                            # 103 个离线测试
 ```
 
 讲三个数字（按最终报告口径）：
@@ -106,7 +106,7 @@ python -m pytest -q                            # 100 个离线测试
 ./start_server.sh start|stop|restart|status
 make seed                       # 重建索引
 make eval                       # 检索消融 + 端到端评测
-make test                       # 100 个离线测试
+make test                       # 103 个离线测试
 python -m app.cli.main --mode agent      # 终端演示 Agent
 python -m app.cli.main -q "报销打款是每月几号" --mode quality --no-stream
 curl -N -X POST http://127.0.0.1:8000/api/chat -H 'Content-Type: application/json' \

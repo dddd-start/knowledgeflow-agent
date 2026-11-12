@@ -13,12 +13,12 @@
 - 独立设计并实现企业知识库 RAG 问答系统：向量 + BM25 双路召回 + RRF 融合 + 查询改写，自建 40 条评测集做消融，检索 Top-1 从纯关键词的 **62.5% 提升到 90%**，引用可溯源到文档与块。
 - 设计意图路由：自建 660 条 6 类意图数据微调 TinyBERT，**准确率 96.2%、CPU 单条约 50ms**（规则基线 59.9%）；天气/计算/时间等简单请求 **0 次大模型调用**直达工具，复杂问题回退 Agent 兜底。
 - 实现 Function Calling Agent 循环（5 工具、≤3 轮、超时/参数校验/异常隔离）与 Agentic 迭代检索（证据充分性判断 + 反馈式查询改写），并加独立 judge 的证据核查，无依据问题**拒答而非编造**。
-- 工程化交付：SSE 流式 + 检索链路可视化（阶段耗时/候选/分数）、请求级 trace 与 `/metrics`、**100 个离线测试**、ruff/mypy + GitHub Actions、Docker Compose 一键起；无 API Key 时自动降级离线模式，保证演示与 CI 可复现。
+- 工程化交付：SSE 流式 + 检索链路可视化（阶段耗时/候选/分数）、请求级 trace 与 `/metrics`、**103 个离线测试**、ruff/mypy + GitHub Actions、Docker Compose 一键起；无 API Key 时自动降级离线模式，保证演示与 CI 可复现。
 - 产出可复现评测：检索消融（含 HyDE/重排的负结论与关闭理由）、端到端延迟与 token 成本、意图分类报告，全部脚本化（`make eval`）。
 
 ## 二、精简版（1 条，用于一页简历空间紧张时）
 
-- 独立开发企业知识库 RAG Agent（Python/FastAPI）：混合检索 + RRF + 意图路由 + Function Calling Agent + 幻觉自检；自建 40 条评测集消融，检索 Top-1 **62.5% → 90%**，意图分类 **96.2%**，100 个离线测试 + CI/Docker，无 Key 可离线演示。
+- 独立开发企业知识库 RAG Agent（Python/FastAPI）：混合检索 + RRF + 意图路由 + Function Calling Agent + 幻觉自检；自建 40 条评测集消融，检索 Top-1 **62.5% → 90%**，意图分类 **96.2%**，103 个离线测试 + CI/Docker，无 Key 可离线演示。
 
 ## 三、"空窗期"怎么写（个人总结 / 项目经历里）
 

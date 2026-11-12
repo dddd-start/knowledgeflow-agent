@@ -146,25 +146,38 @@ class ChatService:
         return self._memories[key]
 
     def ensure_index_ready(self) -> None:
-        """索引与当前 embedding 模型不匹配时自动重建(换模型/无 ML 依赖场景)。
+        """索引与当前 embedding 后端不一致时自动重建。
 
-        典型场景:面试官机器没装 ML 依赖 -> 哈希向量;而你本地用 bge 建过索引。
-        维度不一致会让检索直接报错,这里自动检测并用 data/raw 重建,保证开箱可用。
+        两种不一致都要处理:
+        1. 维度不同(如 bge 512 vs 自定义维度);
+        2. 维度相同但后端不同(哈希 512 vs bge 512)——只看维度会静默返回错误结果,
+           所以入库时把 embedding 描述写进 index_meta.json,启动时比对。
         """
         store = self.pipeline.store
-        vectors = getattr(store, "_vectors", None)
-        if store.count() == 0 or vectors is None or vectors.size == 0:
+        if store.count() == 0:
             return
-        try:
-            current_dim = self.pipeline.embedder.dim
-        except Exception:  # noqa: BLE001
-            return
-        if vectors.shape[1] == current_dim:
+        current = self.pipeline.embedder.describe()
+        meta = store.load_meta() if hasattr(store, "load_meta") else {}
+        saved = (meta or {}).get("embedding") or {}
+        mismatch = False
+        if saved:
+            mismatch = saved.get("backend") != current.get("backend") or saved.get(
+                "model"
+            ) != current.get("model")
+        else:
+            vectors = getattr(store, "_vectors", None)
+            try:
+                dim = self.pipeline.embedder.dim
+            except Exception:  # noqa: BLE001
+                return
+            if vectors is not None and vectors.size and vectors.shape[1] != dim:
+                mismatch = True
+        if not mismatch:
             return
         logger.warning(
-            "索引维度 %d 与当前 embedding 维度 %d 不一致,自动重建索引",
-            vectors.shape[1],
-            current_dim,
+            "索引 embedding 与当前配置不一致(索引=%s, 当前=%s),自动重建索引",
+            saved or "unknown",
+            current,
         )
         from app.rag.ingest import load_documents
 

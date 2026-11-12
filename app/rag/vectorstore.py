@@ -68,6 +68,23 @@ class BaseVectorStore:
     def delete_all(self) -> None:
         raise NotImplementedError
 
+    def save_meta(self, meta: dict) -> None:
+        """记录索引构建信息(embedding 后端/模型/策略),用于启动时一致性校验。"""
+        self.index_dir.mkdir(parents=True, exist_ok=True)
+        with tempfile.NamedTemporaryFile(
+            dir=self.index_dir, suffix=".json", delete=False, mode="w", encoding="utf-8"
+        ) as tmp:
+            json.dump(meta, tmp, ensure_ascii=False, indent=2)
+            os.replace(tmp.name, self.meta_path)
+
+    def load_meta(self) -> dict:
+        if not self.meta_path.exists():
+            return {}
+        try:
+            return json.loads(self.meta_path.read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            return {}
+
     def persist(self) -> None:
         return None
 
@@ -80,6 +97,7 @@ class NumpyVectorStore(BaseVectorStore):
         self.index_dir.mkdir(parents=True, exist_ok=True)
         self.vectors_path = self.index_dir / "vectors.npy"
         self.payload_path = self.index_dir / "chunks.json"
+        self.meta_path = self.index_dir / "index_meta.json"
         self._vectors: np.ndarray = np.zeros((0, 0), dtype=np.float32)
         self._payload: list[dict] = []
         self._load()
@@ -98,6 +116,23 @@ class NumpyVectorStore(BaseVectorStore):
             logger.warning("向量库加载失败,按空库启动: %s", exc)
             self._vectors = np.zeros((0, 0), dtype=np.float32)
             self._payload = []
+
+    def save_meta(self, meta: dict) -> None:
+        """记录索引构建信息(embedding 后端/模型/策略),用于启动时一致性校验。"""
+        self.index_dir.mkdir(parents=True, exist_ok=True)
+        with tempfile.NamedTemporaryFile(
+            dir=self.index_dir, suffix=".json", delete=False, mode="w", encoding="utf-8"
+        ) as tmp:
+            json.dump(meta, tmp, ensure_ascii=False, indent=2)
+            os.replace(tmp.name, self.meta_path)
+
+    def load_meta(self) -> dict:
+        if not self.meta_path.exists():
+            return {}
+        try:
+            return json.loads(self.meta_path.read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            return {}
 
     def persist(self) -> None:
         self.index_dir.mkdir(parents=True, exist_ok=True)

@@ -75,3 +75,24 @@ def test_sse_style_events_have_monotonic_stages(service):
     done = events[-1].data
     assert done["trace"]["request_id"]
     assert done["answer"]
+
+
+def test_ensure_index_ready_rebuilds_on_backend_change(service):
+    """索引是用别的 embedding 建的(比如本地 bge),当前是 hash -> 启动时自动重建。
+
+    只看维度不够:bge 与哈希都是 512 维,必须靠 index_meta.json 里的后端信息判断。
+    """
+    service.pipeline.store.save_meta(
+        {"embedding": {"backend": "st", "model": "BAAI/bge-small-zh-v1.5", "dim": 512}}
+    )
+    # 重建需要 data/raw 里有原始文档
+    service.cfg.raw_dir.mkdir(parents=True, exist_ok=True)
+    (service.cfg.raw_dir / "制度.md").write_text(
+        "# 新制度\n\n## 条款\n这条制度用于验证索引重建。\n", encoding="utf-8"
+    )
+    before = service.pipeline.store.load_meta()
+    service.ensure_index_ready()
+    after = service.pipeline.store.load_meta()
+    assert before["embedding"]["backend"] == "st"
+    assert after["embedding"]["backend"] == "hash", "应当用当前后端重建索引"
+    assert service.pipeline.store.count() > 0

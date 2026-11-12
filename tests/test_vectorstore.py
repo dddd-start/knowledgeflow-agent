@@ -89,3 +89,21 @@ def test_duplicate_chunk_not_added_twice(store: NumpyVectorStore, embedder: Embe
     store.add(chunks, vectors)
     store.add(chunks, vectors)
     assert store.count() == 1
+
+
+def test_index_meta_roundtrip(tmp_path):
+    """索引元信息要能持久化:启动时靠它判断 embedding 后端是否变化。"""
+    from app.rag.vectorstore import NumpyVectorStore
+
+    store = NumpyVectorStore(tmp_path / "idx")
+    store.save_meta({"embedding": {"backend": "hash", "model": "hash-512", "dim": 512}})
+    reloaded = NumpyVectorStore(tmp_path / "idx")
+    meta = reloaded.load_meta()
+    assert meta["embedding"]["backend"] == "hash"
+    assert reloaded.load_meta() is not None
+
+
+def test_index_meta_missing_returns_empty(tmp_path):
+    from app.rag.vectorstore import NumpyVectorStore
+
+    assert NumpyVectorStore(tmp_path / "empty").load_meta() == {}

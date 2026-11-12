@@ -33,12 +33,16 @@ def pct(values: list[float], q: float) -> float:
     return round(ordered[index], 1)
 
 
-def bench_mode(pipeline, queries: list[str], mode: str, rounds: int) -> dict:
+def bench_mode(
+    pipeline, queries: list[str], mode: str, rounds: int, enable_rerank: bool = False
+) -> dict:
     latencies, stage_times = [], {}
     for _ in range(rounds):
         for query in queries:
             started = time.perf_counter()
-            _hits, trace = pipeline.retrieve(query, mode=mode)
+            _hits, trace = pipeline.retrieve(
+                query, mode=mode, enable_rerank=True if enable_rerank else None
+            )
             latencies.append((time.perf_counter() - started) * 1000)
             for stage in trace.stages:
                 stage_times.setdefault(stage.name, []).append(stage.ms)
@@ -79,7 +83,7 @@ def main() -> int:
     if args.rerank:
         pipeline.reranker = Reranker(backend="st")
         pipeline.retrieve("预热查询", mode="fast")  # 触发重排模型加载
-        results.append(bench_mode(pipeline, queries, "quality", args.rounds))
+        results.append(bench_mode(pipeline, queries, "quality", args.rounds, enable_rerank=True))
         results[-1]["mode"] = "quality+rerank"
 
     report = {

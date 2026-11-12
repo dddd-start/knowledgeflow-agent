@@ -277,6 +277,18 @@ class RetrievalPipeline:
         if chunks:
             vectors = self.embedder.encode_documents([c.text for c in chunks])
             self.store.add(chunks, vectors)
+            if hasattr(self.store, "save_meta"):
+                try:
+                    self.store.save_meta(
+                        {
+                            "embedding": self.embedder.describe(),
+                            "strategy": strategy,
+                            "documents": len(documents),
+                            "chunks": self.store.count(),
+                        }
+                    )
+                except Exception:  # noqa: BLE001 - 元信息写失败不影响检索
+                    logger.warning("写入索引元信息失败", exc_info=True)
         self.rebuild_bm25()
         logger.info("入库完成: %d 篇文档 / %d 个块", len(documents), len(chunks))
         return {
