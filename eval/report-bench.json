@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12 18:44:06",
+  "generated_at": "2026-11-12 19:15:43",
   "kb_documents": 19,
   "kb_chunks": 75,
   "embedding": {
@@ -13,11 +13,11 @@
     {
       "mode": "fast",
       "samples": 60,
-      "p50_ms": 18.9,
-      "p95_ms": 21.5,
-      "mean_ms": 23.7,
+      "p50_ms": 17.7,
+      "p95_ms": 19.9,
+      "mean_ms": 22.0,
       "stages_p50_ms": {
-        "vector": 17,
+        "vector": 16,
         "bm25": 0,
         "fuse": 0
       }
@@ -25,12 +25,12 @@
     {
       "mode": "quality",
       "samples": 60,
-      "p50_ms": 674.4,
-      "p95_ms": 1386.5,
-      "mean_ms": 798.8,
+      "p50_ms": 791.4,
+      "p95_ms": 1696.4,
+      "mean_ms": 895.1,
       "stages_p50_ms": {
-        "rewrite": 651,
-        "vector": 24,
+        "rewrite": 758,
+        "vector": 23,
         "bm25": 0,
         "fuse": 0
       }
@@ -38,14 +38,15 @@
     {
       "mode": "quality+rerank",
       "samples": 60,
-      "p50_ms": 697.6,
-      "p95_ms": 1288.7,
-      "mean_ms": 783.9,
+      "p50_ms": 4077.1,
+      "p95_ms": 5023.9,
+      "mean_ms": 4261.6,
       "stages_p50_ms": {
-        "rewrite": 663,
-        "vector": 26,
-        "bm25": 1,
-        "fuse": 0
+        "rewrite": 717,
+        "vector": 18,
+        "bm25": 0,
+        "fuse": 0,
+        "rerank": 3271
       }
     }
   ],
