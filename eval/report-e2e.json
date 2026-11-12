@@ -1,0 +1,587 @@
+{
+  "generated_at": "2026-11-12 18:56:04",
+  "meta": {
+    "app": "KnowledgeFlow v1.0.0",
+    "llm": {
+      "backend": "openai",
+      "model": "deepseek/deepseek-v4.1-flash"
+    },
+    "embedding": {
+      "backend": "st",
+      "model": "BAAI/bge-small-zh-v1.5"
+    },
+    "vector_store": "numpy",
+    "rerank": {
+      "enabled": false,
+      "model": "BAAI/bge-reranker-base"
+    },
+    "intent": {
+      "enabled": true,
+      "threshold": 0.6,
+      "backend": "tinybert"
+    },
+    "prompts": {
+      "answer": "1.3",
+      "rewrite": "1.2",
+      "self_check": "1.2"
+    },
+    "kb": {
+      "documents": 19,
+      "chunks": 75,
+      "embedding": {
+        "backend": "st",
+        "model": "BAAI/bge-small-zh-v1.5",
+        "dim": 512
+      },
+      "vector_store": "numpy",
+      "bm25": true,
+      "rerank": false
+    },
+    "offline_demo": false,
+    "modes": [
+      "auto",
+      "fast",
+      "quality",
+      "agent",
+      "agentic"
+    ]
+  },
+  "summary": {
+    "mode": "quality",
+    "n": 40,
+    "citation_hit_at_1": 0.85,
+    "citation_hit_at_3": 0.925,
+    "refusal_rate_oos": 0.75,
+    "latency_p50_ms": 14655,
+    "latency_p95_ms": 20911,
+    "avg_total_tokens": 11368.4,
+    "avg_cost_usd": 0.001776,
+    "errors": 0,
+    "by_type": {
+      "keyword": {
+        "n": 14,
+        "hit1": 1.0,
+        "hit3": 1.0
+      },
+      "paraphrase": {
+        "n": 16,
+        "hit1": 0.688,
+        "hit3": 0.812
+      },
+      "multi_hop": {
+        "n": 6,
+        "hit1": 1.0,
+        "hit3": 1.0
+      },
+      "noisy": {
+        "n": 4,
+        "hit1": 0.75,
+        "hit3": 1.0
+      }
+    }
+  },
+  "details": [
+    {
+      "query": "报销打款是每月几号",
+      "type": "keyword",
+      "gold": "doc-财务制度-费用报销流程",
+      "hit@1": true,
+      "hit@3": true,
+      "citations": 5,
+      "self_check": "supported",
+      "latency_ms": 8375,
+      "error": false
+    },
+    {
+      "query": "补卡一个月能补几次",
+      "type": "keyword",
+      "gold": "doc-人事制度-考勤管理制度",
+      "hit@1": true,
+      "hit@3": true,
+      "citations": 5,
+      "self_check": "supported",
+      "latency_ms": 11603,
+      "error": false
+    },
+    {
+      "query": "年假最多能休多少天",
+      "type": "keyword",
+      "gold": "doc-人事制度-请假与休假制度",
+      "hit@1": true,
+      "hit@3": true,
+      "citations": 5,
+      "self_check": "supported",
+      "latency_ms": 12990,
+      "error": false
+    },
+    {
+      "query": "试用期多长时间",
+      "type": "keyword",
+      "gold": "doc-人事制度-入职与试用期管理",
+      "hit@1": true,
+      "hit@3": true,
+      "citations": 5,
+      "self_check": "supported",
+      "latency_ms": 8415,
+      "error": false
+    },
+    {
+      "query": "每人每年的培训预算是多少钱",
+      "type": "keyword",
+      "gold": "doc-人事制度-员工培训与学习发展",
+      "hit@1": true,
+      "hit@3": true,
+      "citations": 5,
+      "self_check": "supported",
+      "latency_ms": 9475,
+      "error": false
+    },
+    {
+      "query": "一线城市住宿标准每晚上限多少",
+      "type": "keyword",
+      "gold": "doc-财务制度-差旅标准与出差申请",
+      "hit@1": true,
+      "hit@3": true,
+      "citations": 5,
+      "self_check": "supported",
+      "latency_ms": 7790,
+      "error": false
+    },
+    {
+      "query": "采购多少金额要三家比价",
+      "type": "keyword",
+      "gold": "doc-财务制度-采购与合同审批",
+      "hit@1": true,
+      "hit@3": true,
+      "citations": 5,
+      "self_check": "supported",
+      "latency_ms": 10052,
+      "error": false
+    },
+    {
+      "query": "VPN 单次会话最长多久",
+      "type": "keyword",
+      "gold": "doc-IT服务-VPN与远程接入",
+      "hit@1": true,
+      "hit@3": true,
+      "citations": 5,
+      "self_check": "supported",
+      "latency_ms": 8686,
+      "error": false
+    },
+    {
+      "query": "个人打印配额每月多少页",
+      "type": "keyword",
+      "gold": "doc-IT服务-打印机与办公设备",
+      "hit@1": true,
+      "hit@3": true,
+      "citations": 5,
+      "self_check": "supported",
+      "latency_ms": 11041,
+      "error": false
+    },
+    {
+      "query": "密码连续输错几次会锁定账号",
+      "type": "keyword",
+      "gold": "doc-IT服务-账号与权限管理",
+      "hit@1": true,
+      "hit@3": true,
+      "citations": 5,
+      "self_check": "supported",
+      "latency_ms": 9175,
+      "error": false
+    },
+    {
+      "query": "云策 OA 包含哪些模块",
+      "type": "keyword",
+      "gold": "doc-产品手册-云策OA平台简介",
+      "hit@1": true,
+      "hit@3": true,
+      "citations": 5,
+      "self_check": "supported",
+      "latency_ms": 9424,
+      "error": false
+    },
+    {
+      "query": "V3.2.0 有哪些新功能",
+      "type": "keyword",
+      "gold": "doc-产品手册-版本发布说明",
+      "hit@1": true,
+      "hit@3": true,
+      "citations": 5,
+      "self_check": "supported",
+      "latency_ms": 13295,
+      "error": false
+    },
+    {
+      "query": "P1 工单多久响应",
+      "type": "keyword",
+      "gold": "doc-产品手册-客服支持与工单规范",
+      "hit@1": true,
+      "hit@3": true,
+      "citations": 5,
+      "self_check": "supported",
+      "latency_ms": 11756,
+      "error": false
+    },
+    {
+      "query": "私有化部署最低硬件配置",
+      "type": "keyword",
+      "gold": "doc-技术文档-私有化部署指南",
+      "hit@1": true,
+      "hit@3": true,
+      "citations": 5,
+      "self_check": "supported",
+      "latency_ms": 11078,
+      "error": false
+    },
+    {
+      "query": "出差住酒店的钱公司怎么给我",
+      "type": "paraphrase",
+      "gold": "doc-财务制度-差旅标准与出差申请",
+      "hit@1": true,
+      "hit@3": true,
+      "citations": 5,
+      "self_check": "supported",
+      "latency_ms": 14884,
+      "error": false
+    },
+    {
+      "query": "钱是自己先垫的,最晚什么时候必须提",
+      "type": "paraphrase",
+      "gold": "doc-财务制度-费用报销流程",
+      "hit@1": false,
+      "hit@3": false,
+      "citations": 5,
+      "self_check": "supported",
+      "latency_ms": 14826,
+      "error": false
+    },
+    {
+      "query": "早上老迟到会有什么后果",
+      "type": "paraphrase",
+      "gold": "doc-人事制度-考勤管理制度",
+      "hit@1": true,
+      "hit@3": true,
+      "citations": 5,
+      "self_check": "supported",
+      "latency_ms": 12736,
+      "error": false
+    },
+    {
+      "query": "拿到 offer 去报到要带些什么",
+      "type": "paraphrase",
+      "gold": "doc-人事制度-入职与试用期管理",
+      "hit@1": true,
+      "hit@3": true,
+      "citations": 5,
+      "self_check": "supported",
+      "latency_ms": 14084,
+      "error": false
+    },
+    {
+      "query": "自己花钱去考个证能报多少",
+      "type": "paraphrase",
+      "gold": "doc-人事制度-员工培训与学习发展",
+      "hit@1": false,
+      "hit@3": false,
+      "citations": 5,
+      "self_check": null,
+      "latency_ms": 14655,
+      "error": false
+    },
+    {
+      "query": "买台服务器得找谁签字",
+      "type": "paraphrase",
+      "gold": "doc-财务制度-采购与合同审批",
+      "hit@1": true,
+      "hit@3": true,
+      "citations": 5,
+      "self_check": "supported",
+      "latency_ms": 18132,
+      "error": false
+    },
+    {
+      "query": "在家上不了公司内网怎么办",
+      "type": "paraphrase",
+      "gold": "doc-IT服务-VPN与远程接入",
+      "hit@1": true,
+      "hit@3": true,
+      "citations": 5,
+      "self_check": "supported",
+      "latency_ms": 20491,
+      "error": false
+    },
+    {
+      "query": "公司电脑丢了第一时间该做什么",
+      "type": "paraphrase",
+      "gold": "doc-安全合规-终端与密码安全规范",
+      "hit@1": false,
+      "hit@3": true,
+      "citations": 5,
+      "self_check": "supported",
+      "latency_ms": 21124,
+      "error": false
+    },
+    {
+      "query": "新买的打印机怎么连到电脑上",
+      "type": "paraphrase",
+      "gold": "doc-IT服务-打印机与办公设备",
+      "hit@1": true,
+      "hit@3": true,
+      "citations": 5,
+      "self_check": "supported",
+      "latency_ms": 20981,
+      "error": false
+    },
+    {
+      "query": "登录密码想不起来了怎么找回",
+      "type": "paraphrase",
+      "gold": "doc-IT服务-账号与权限管理",
+      "hit@1": true,
+      "hit@3": true,
+      "citations": 5,
+      "self_check": "supported",
+      "latency_ms": 13116,
+      "error": false
+    },
+    {
+      "query": "标准版和企业版差在哪",
+      "type": "paraphrase",
+      "gold": "doc-产品手册-云策OA平台简介",
+      "hit@1": true,
+      "hit@3": true,
+      "citations": 5,
+      "self_check": "supported",
+      "latency_ms": 19482,
+      "error": false
+    },
+    {
+      "query": "系统大概多久发一个新版本",
+      "type": "paraphrase",
+      "gold": "doc-产品手册-版本发布说明",
+      "hit@1": true,
+      "hit@3": true,
+      "citations": 5,
+      "self_check": "supported",
+      "latency_ms": 11359,
+      "error": false
+    },
+    {
+      "query": "客户半夜出故障了怎么找到人处理",
+      "type": "paraphrase",
+      "gold": "doc-产品手册-客服支持与工单规范",
+      "hit@1": false,
+      "hit@3": false,
+      "citations": 5,
+      "self_check": "supported",
+      "latency_ms": 20622,
+      "error": false
+    },
+    {
+      "query": "想把系统装在我们自己公司的服务器上,要准备什么",
+      "type": "paraphrase",
+      "gold": "doc-技术文档-私有化部署指南",
+      "hit@1": false,
+      "hit@3": true,
+      "citations": 5,
+      "self_check": "supported",
+      "latency_ms": 16938,
+      "error": false
+    },
+    {
+      "query": "客户名单能随便拷到 U 盘带出去吗",
+      "type": "paraphrase",
+      "gold": "doc-安全合规-数据分级与保护规范",
+      "hit@1": true,
+      "hit@3": true,
+      "citations": 5,
+      "self_check": "supported",
+      "latency_ms": 19410,
+      "error": false
+    },
+    {
+      "query": "发现公司数据被人恶意拷走了该找谁、怎么处理",
+      "type": "paraphrase",
+      "gold": "doc-安全合规-信息安全事件应急预案",
+      "hit@1": true,
+      "hit@3": true,
+      "citations": 5,
+      "self_check": null,
+      "latency_ms": 14392,
+      "error": false
+    },
+    {
+      "query": "报销 12000 元要走几级审批,打款又是哪一天",
+      "type": "multi_hop",
+      "gold": "doc-财务制度-费用报销流程",
+      "hit@1": true,
+      "hit@3": true,
+      "citations": 5,
+      "self_check": "supported",
+      "latency_ms": 15407,
+      "error": false
+    },
+    {
+      "query": "请 5 天年假需要谁批,年假天数又是怎么算的",
+      "type": "multi_hop",
+      "gold": "doc-人事制度-请假与休假制度",
+      "hit@1": true,
+      "hit@3": true,
+      "citations": 5,
+      "self_check": "supported",
+      "latency_ms": 19090,
+      "error": false
+    },
+    {
+      "query": "新同事入职当天要办哪些手续,账号多久能开通",
+      "type": "multi_hop",
+      "gold": "doc-人事制度-入职与试用期管理",
+      "hit@1": true,
+      "hit@3": true,
+      "citations": 5,
+      "self_check": "supported",
+      "latency_ms": 17905,
+      "error": false
+    },
+    {
+      "query": "生产环境发布前要检查什么,出问题多久必须回滚完",
+      "type": "multi_hop",
+      "gold": "doc-技术文档-发布与回滚流程",
+      "hit@1": true,
+      "hit@3": true,
+      "citations": 5,
+      "self_check": "supported",
+      "latency_ms": 17085,
+      "error": false
+    },
+    {
+      "query": "机密数据要导出给客户,需要谁审批,访问日志会留多久",
+      "type": "multi_hop",
+      "gold": "doc-安全合规-数据分级与保护规范",
+      "hit@1": true,
+      "hit@3": true,
+      "citations": 5,
+      "self_check": "supported",
+      "latency_ms": 17860,
+      "error": false
+    },
+    {
+      "query": "我们 300 人的公司买企业版还是标准版,两版 API 限流差多少",
+      "type": "multi_hop",
+      "gold": "doc-产品手册-云策OA平台简介",
+      "hit@1": true,
+      "hit@3": true,
+      "citations": 5,
+      "self_check": "supported",
+      "latency_ms": 16971,
+      "error": false
+    },
+    {
+      "query": "我昨天在楼下咖啡店买了杯 38 块的拿铁自己喝的,另外上周去上海出差住酒店的钱怎么报,超过 600 一晚还能报吗",
+      "type": "noisy",
+      "gold": "doc-财务制度-差旅标准与出差申请",
+      "hit@1": true,
+      "hit@3": true,
+      "citations": 5,
+      "self_check": "supported",
+      "latency_ms": 20911,
+      "error": false
+    },
+    {
+      "query": "我们团队 12 个人下周要给客户做演示,想打印 200 页彩色材料,彩色打印机在几层,额度又怎么算",
+      "type": "noisy",
+      "gold": "doc-IT服务-打印机与办公设备",
+      "hit@1": true,
+      "hit@3": true,
+      "citations": 5,
+      "self_check": null,
+      "latency_ms": 13250,
+      "error": false
+    },
+    {
+      "query": "我朋友在别的公司做 HR,他们用的是另一套系统,我想问我们公司员工离职后邮箱还会保留多久、怎么转给交接人",
+      "type": "noisy",
+      "gold": "doc-IT服务-账号与权限管理",
+      "hit@1": false,
+      "hit@3": true,
+      "citations": 5,
+      "self_check": "supported",
+      "latency_ms": 15826,
+      "error": false
+    },
+    {
+      "query": "最近在帮客户对接我们的开放平台,他们问 API 每分钟能调多少次、返回 429 该怎么处理,顺便问下他们用的是 Java 还是 Python 我也不确定",
+      "type": "noisy",
+      "gold": "doc-技术文档-接口与API接入说明",
+      "hit@1": true,
+      "hit@3": true,
+      "citations": 5,
+      "self_check": "supported",
+      "latency_ms": 17962,
+      "error": false
+    }
+  ],
+  "oos": [
+    {
+      "query": "云策科技今天的股价是多少",
+      "refused": true,
+      "answer_head": "知识库中没有找到关于「云策科技股价」的相关说明。\n\n现有资料只覆盖产品手册、财务报销、人事培训、请假休假与客服工单等内部制度，不包含证券行情或上市公司信息披露内"
+    },
+    {
+      "query": "我们最大的竞争对手上个季度营收多少",
+      "refused": true,
+      "answer_head": "知识库中没有找到关于「竞争对手上季度营收」的相关说明。\n\n现有资料仅包含内部制度与产品文档，明确涉及的经营数据只有云策 OA 自身的客户规模（截至 2026 年"
+    },
+    {
+      "query": "帮我查一下明天北京的天气",
+      "refused": true,
+      "answer_head": "知识库中没有找到关于「天气预报」的相关说明，现有资料均为公司内部制度与产品文档，不含气象数据，因此无法查询明天北京的天气。\n\n建议：请通过气象台官网或手机自带天"
+    },
+    {
+      "query": "2026 年诺贝尔文学奖得主是谁",
+      "refused": true,
+      "answer_head": "知识库中没有找到关于「2026 年诺贝尔文学奖得主」的相关说明。\n\n现有资料全部为公司内部制度与产品文档，不含外部新闻、奖项评选类信息，因此无法给出得主姓名，也"
+    },
+    {
+      "query": "公司 CEO 的私人手机号是多少",
+      "refused": true,
+      "answer_head": "知识库中没有找到相关说明，并且这类信息也不适合通过问答助手提供。\n\n原因：\n1. **知识库未收录**：现有资料仅覆盖内部制度与产品文档，不含高管个人联系方式；"
+    },
+    {
+      "query": "帮我写一段 Python 快速排序的代码",
+      "refused": true,
+      "answer_head": "知识库中没有找到足够依据来回答这个问题,为避免误导,我不做推测。\n建议:换一种问法、补充上下文,或联系对应的责任部门确认。"
+    },
+    {
+      "query": "公司食堂今天中午吃什么",
+      "refused": true,
+      "answer_head": "知识库中没有找到关于「公司食堂今日菜单」的相关说明。\n\n现有资料只覆盖发布回滚、入职试用期、终端安全、差旅标准、采购合同等制度文档，不包含食堂供餐安排或菜单信息"
+    },
+    {
+      "query": "客户杭州恒信科技的生产数据库密码是多少",
+      "refused": true,
+      "answer_head": "知识库中没有找到、也不应提供这类信息。客户生产数据库密码属于最高敏感级别的凭据，任何情况下都不能通过问答助手查询或传递。\n\n**为什么不能给**\n1. **密级"
+    },
+    {
+      "query": "帮我算一下 1234 乘以 5678 等于多少",
+      "refused": false,
+      "answer_head": "**1234 × 5678 = 7,006,652**\n\n计算过程：\n- 5678 × 1200 = 6,813,600\n- 5678 × 34 = 193,0"
+    },
+    {
+      "query": "云策 OA 4.0 版本什么时候发布,有哪些功能",
+      "refused": false,
+      "answer_head": "**结论：知识库中没有关于「云策 OA 4.0」的任何发布计划或功能说明**，我没有查到该版本的发布时间与功能清单，不能推测。\n\n### 知识库中已有的最新版本"
+    },
+    {
+      "query": "员工张三上个月的实发工资是多少",
+      "refused": false,
+      "answer_head": "**结论：知识库中没有收录任何员工薪资数据，无法查询张三上个月的实发工资。**\n\n原因：\n1. **数据不在知识库范围内**：现有资料仅包含请假与休假、培训发展"
+    },
+    {
+      "query": "美国最新的对华半导体出口管制政策是什么",
+      "refused": true,
+      "answer_head": "**结论：知识库中没有找到关于「美国对华半导体出口管制政策」的说明，无法给出具体条款或最新修订内容。**\n\n现有资料均为公司内部制度与产品文档（发布回滚、入职试"
+    }
+  ]
+}

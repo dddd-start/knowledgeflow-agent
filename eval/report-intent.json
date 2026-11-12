@@ -1,0 +1,288 @@
+{
+  "eval_size": 132,
+  "results": [
+    {
+      "classifier": "rule",
+      "accuracy": 0.5985,
+      "macro_f1": 0.5408,
+      "per_class": {
+        "calculator": {
+          "precision": 0.957,
+          "recall": 1.0,
+          "f1": 0.978,
+          "support": 22
+        },
+        "complex_agent": {
+          "precision": 1.0,
+          "recall": 0.045,
+          "f1": 0.087,
+          "support": 22
+        },
+        "datetime": {
+          "precision": 0.714,
+          "recall": 0.682,
+          "f1": 0.698,
+          "support": 22
+        },
+        "kb_query": {
+          "precision": 0.356,
+          "recall": 0.955,
+          "f1": 0.519,
+          "support": 22
+        },
+        "small_talk": {
+          "precision": 1.0,
+          "recall": 0.136,
+          "f1": 0.24,
+          "support": 22
+        },
+        "weather": {
+          "precision": 0.68,
+          "recall": 0.773,
+          "f1": 0.723,
+          "support": 22
+        }
+      },
+      "confusion": [
+        [
+          22,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          5,
+          8,
+          0,
+          7
+        ],
+        [
+          0,
+          0,
+          15,
+          7,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          21,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          18,
+          3,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          5,
+          0,
+          17
+        ]
+      ],
+      "labels": [
+        "calculator",
+        "complex_agent",
+        "datetime",
+        "kb_query",
+        "small_talk",
+        "weather"
+      ],
+      "latency_ms_per_sample": 0.002,
+      "misses": [
+        {
+          "text": "南昌明天要穿外套吗",
+          "gold": "weather",
+          "pred": "kb_query"
+        },
+        {
+          "text": "济南今天紫外线强吗",
+          "gold": "weather",
+          "pred": "kb_query"
+        },
+        {
+          "text": "明天杭州会下雪吗",
+          "gold": "weather",
+          "pred": "kb_query"
+        },
+        {
+          "text": "福州今天风大不大",
+          "gold": "weather",
+          "pred": "kb_query"
+        },
+        {
+          "text": "明天兰州会下雪吗",
+          "gold": "weather",
+          "pred": "kb_query"
+        },
+        {
+          "text": "现在是上午还是下午",
+          "gold": "datetime",
+          "pred": "kb_query"
+        },
+        {
+          "text": "帮我看看今天过到第几周了？",
+          "gold": "datetime",
+          "pred": "kb_query"
+        },
+        {
+          "text": "麻烦问一下今天是本月的第几天，在线等",
+          "gold": "datetime",
+          "pred": "kb_query"
+        },
+        {
+          "text": "现在什么时间，在线等",
+          "gold": "datetime",
+          "pred": "kb_query"
+        },
+        {
+          "text": "请问现在是第几季度？",
+          "gold": "datetime",
+          "pred": "kb_query"
+        }
+      ]
+    },
+    {
+      "classifier": "tinybert",
+      "accuracy": 0.9621,
+      "macro_f1": 0.962,
+      "per_class": {
+        "calculator": {
+          "precision": 0.957,
+          "recall": 1.0,
+          "f1": 0.978,
+          "support": 22
+        },
+        "complex_agent": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 22
+        },
+        "datetime": {
+          "precision": 0.955,
+          "recall": 0.955,
+          "f1": 0.955,
+          "support": 22
+        },
+        "kb_query": {
+          "precision": 1.0,
+          "recall": 0.864,
+          "f1": 0.927,
+          "support": 22
+        },
+        "small_talk": {
+          "precision": 0.955,
+          "recall": 0.955,
+          "f1": 0.955,
+          "support": 22
+        },
+        "weather": {
+          "precision": 0.917,
+          "recall": 1.0,
+          "f1": 0.957,
+          "support": 22
+        }
+      },
+      "confusion": [
+        [
+          22,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          22,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          21,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          1,
+          19,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          21,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          22
+        ]
+      ],
+      "labels": [
+        "calculator",
+        "complex_agent",
+        "datetime",
+        "kb_query",
+        "small_talk",
+        "weather"
+      ],
+      "latency_ms_per_sample": 51.999,
+      "misses": [
+        {
+          "text": "北京时间现在几点",
+          "gold": "datetime",
+          "pred": "weather"
+        },
+        {
+          "text": "上班时间是几点到几点",
+          "gold": "kb_query",
+          "pred": "datetime"
+        },
+        {
+          "text": "V3.2.1 修了什么问题",
+          "gold": "kb_query",
+          "pred": "calculator"
+        },
+        {
+          "text": "Redis 用来做什么",
+          "gold": "kb_query",
+          "pred": "small_talk"
+        },
+        {
+          "text": "今天下雨了心情不好",
+          "gold": "small_talk",
+          "pred": "weather"
+        }
+      ]
+    }
+  ]
+}

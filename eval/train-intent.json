@@ -1,0 +1,8 @@
+{
+  "base_model": "huawei-noah/TinyBERT_4L_zh",
+  "train_size": 660,
+  "eval_size": 132,
+  "epochs": 8,
+  "best_eval_acc": 0.9621,
+  "train_seconds": 95.1
+}

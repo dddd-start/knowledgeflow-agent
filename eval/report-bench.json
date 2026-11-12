@@ -1,0 +1,53 @@
+{
+  "generated_at": "2026-11-12 18:44:06",
+  "kb_documents": 19,
+  "kb_chunks": 75,
+  "embedding": {
+    "backend": "st",
+    "model": "BAAI/bge-small-zh-v1.5",
+    "dim": 512
+  },
+  "queries": 20,
+  "rounds": 3,
+  "results": [
+    {
+      "mode": "fast",
+      "samples": 60,
+      "p50_ms": 18.9,
+      "p95_ms": 21.5,
+      "mean_ms": 23.7,
+      "stages_p50_ms": {
+        "vector": 17,
+        "bm25": 0,
+        "fuse": 0
+      }
+    },
+    {
+      "mode": "quality",
+      "samples": 60,
+      "p50_ms": 674.4,
+      "p95_ms": 1386.5,
+      "mean_ms": 798.8,
+      "stages_p50_ms": {
+        "rewrite": 651,
+        "vector": 24,
+        "bm25": 0,
+        "fuse": 0
+      }
+    },
+    {
+      "mode": "quality+rerank",
+      "samples": 60,
+      "p50_ms": 697.6,
+      "p95_ms": 1288.7,
+      "mean_ms": 783.9,
+      "stages_p50_ms": {
+        "rewrite": 663,
+        "vector": 26,
+        "bm25": 1,
+        "fuse": 0
+      }
+    }
+  ],
+  "note": "quality 模式的 LLM 调用(改写/HyDE)耗时在 stages_p50_ms 的 rewrite/hyde 中体现"
+}
