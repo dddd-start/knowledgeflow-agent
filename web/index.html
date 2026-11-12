@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#08090c">
+  <meta name="description" content="KnowledgeFlow —— 企业知识库智能问答演示台:混合检索、意图路由、Agent 工具循环与幻觉自检的完整链路可视化。">
+  <title>KnowledgeFlow · 企业知识库智能问答</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%236366f1'/%3E%3Cpath d='M9 11h8M9 16h14M9 21h6' stroke='white' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <!-- 内联 SVG 图标库:无 CDN、无外网字体,断网也能完整渲染 -->
+  <svg class="svg-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+    <symbol id="i-logo" viewBox="0 0 24 24">
+      <path d="M4 7.5h7.5M4 12h12.5M4 16.5h6" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/>
+      <circle cx="18" cy="7.5" r="2.1" stroke="currentColor" stroke-width="1.8"/>
+      <circle cx="19.5" cy="16.5" r="2.1" stroke="currentColor" stroke-width="1.8"/>
+    </symbol>
+    <symbol id="i-send" viewBox="0 0 24 24">
+      <path d="M12 19V5M6 11l6-6 6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-stop" viewBox="0 0 24 24">
+      <rect x="7" y="7" width="10" height="10" rx="2" fill="currentColor"/>
+    </symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24">
+      <path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+      <path d="M18.5 15.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8.8-2.2Z" fill="currentColor"/>
+    </symbol>
+    <symbol id="i-search" viewBox="0 0 24 24">
+      <circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="1.7"/>
+      <path d="M16 16l4.5 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24">
+      <path d="M13 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9l-6-6Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+      <path d="M13 3v6h6M8.5 13h7M8.5 17h4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-upload" viewBox="0 0 24 24">
+      <path d="M12 16V4m0 0L7.5 8.5M12 4l4.5 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24">
+      <path d="M20 12a8 8 0 1 1-2.6-5.9M20 4v4.5h-4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24">
+      <rect x="8.5" y="8.5" width="11" height="11" rx="2" stroke="currentColor" stroke-width="1.6"/>
+      <path d="M15.5 8.5V6a1.5 1.5 0 0 0-1.5-1.5H6A1.5 1.5 0 0 0 4.5 6v8A1.5 1.5 0 0 0 6 15.5h2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24">
+      <path d="M6 9.5l6 6 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-check" viewBox="0 0 24 24">
+      <path d="M5 12.5l4.5 4.5L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24">
+      <path d="M12 4.5 21 20H3L12 4.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+      <path d="M12 10v4.5M12 17.2v.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-x" viewBox="0 0 24 24">
+      <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24">
+      <path d="M4 12h15m0 0-5.5-5.5M19 12l-5.5 5.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-cpu" viewBox="0 0 24 24">
+      <rect x="7" y="7" width="10" height="10" rx="2" stroke="currentColor" stroke-width="1.6"/>
+      <path d="M10 3.5v3M14 3.5v3M10 17.5v3M14 17.5v3M3.5 10h3M3.5 14h3M17.5 10h3M17.5 14h3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-activity" viewBox="0 0 24 24">
+      <path d="M3 12.5h4l2.5-6 4 11 2.5-5h5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24">
+      <path d="M12 3.5 21 8l-9 4.5L3 8l9-4.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+      <path d="M3 12.5 12 17l9-4.5M3 16.5 12 21l9-4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24">
+      <path d="M12 3.5 19 6v6c0 4.4-3 7.4-7 8.5-4-1.1-7-4.1-7-8.5V6l7-2.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+      <path d="M9 12l2.2 2.2L15.5 10" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-db" viewBox="0 0 24 24">
+      <ellipse cx="12" cy="6" rx="7.5" ry="3" stroke="currentColor" stroke-width="1.6"/>
+      <path d="M4.5 6v12c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3V6M4.5 12c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3" stroke="currentColor" stroke-width="1.6"/>
+    </symbol>
+    <symbol id="i-code" viewBox="0 0 24 24">
+      <path d="M8.5 7.5 4 12l4.5 4.5M15.5 7.5 20 12l-4.5 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.6"/>
+      <path d="M12 7.5V12l3 2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24">
+      <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-terminal" viewBox="0 0 24 24">
+      <rect x="3.5" y="4.5" width="17" height="15" rx="2.5" stroke="currentColor" stroke-width="1.6"/>
+      <path d="M7.5 9.5 10.5 12l-3 2.5M12.5 15h4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+  </svg>
+
+  <div class="app-shell">
+    <!-- ========== 顶部栏 ========== -->
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><use href="#i-logo"/></svg>
+        </div>
+        <div class="brand-text">
+          <div class="brand-title-row">
+            <h1>KnowledgeFlow</h1>
+            <span class="brand-ver">v1.0</span>
+          </div>
+          <p>企业知识库智能问答 · 检索链路可解释演示台</p>
+        </div>
+      </div>
+
+      <div class="topbar-right">
+        <div class="status-badges" id="statusBadges" aria-label="系统状态">
+          <span class="pill skeleton-pill" aria-hidden="true"></span>
+          <span class="pill skeleton-pill" aria-hidden="true"></span>
+        </div>
+        <button type="button" class="btn btn-ghost" id="newSessionBtn" aria-label="开始新会话,清空当前对话">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-plus"/></svg>
+          <span>新会话</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- ========== 视图切换 ========== -->
+    <nav class="viewbar" aria-label="主导航">
+      <div class="tabs" role="tablist" aria-label="视图">
+        <button type="button" class="tab is-active" role="tab" id="tab-chat" aria-controls="view-chat" aria-selected="true" data-view="chat">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-spark"/></svg>对话
+        </button>
+        <button type="button" class="tab" role="tab" id="tab-kb" aria-controls="view-kb" aria-selected="false" data-view="kb" tabindex="-1">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-db"/></svg>知识库
+        </button>
+        <button type="button" class="tab" role="tab" id="tab-about" aria-controls="view-about" aria-selected="false" data-view="about" tabindex="-1">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-layers"/></svg>关于
+        </button>
+      </div>
+
+      <div class="viewbar-right">
+        <div class="mode-seg" id="modeSegment" role="group" aria-label="回答模式"></div>
+      </div>
+    </nav>
+
+    <main class="main">
+      <!-- ========== 对话视图 ========== -->
+      <section class="view is-active" id="view-chat" role="tabpanel" aria-labelledby="tab-chat" tabindex="0">
+        <div class="chat-layout">
+          <!-- 左:对话 -->
+          <div class="panel chat-panel">
+            <div class="chat-scroll" id="chatScroll">
+              <div class="welcome" id="welcome">
+                <div class="welcome-glow" aria-hidden="true"></div>
+                <div class="welcome-mark" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><use href="#i-spark"/></svg>
+                </div>
+                <h2>问一句,看见整条检索链路</h2>
+                <p class="welcome-sub">
+                  混合检索 · 意图路由 · Agent 工具循环 · 幻觉自检。<br>
+                  回答之外,右侧会同步展开每一次召回、融合与自检的细节。
+                </p>
+                <div class="welcome-feats" aria-label="核心能力">
+                  <span class="feat"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-search"/></svg>向量 + BM25 混合召回</span>
+                  <span class="feat"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cpu"/></svg>意图路由自动选路</span>
+                  <span class="feat"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-shield"/></svg>自检与引用溯源</span>
+                </div>
+
+                <div class="demo-block">
+                  <div class="demo-head">
+                    <span class="demo-title">演示问题</span>
+                    <span class="demo-hint" id="demoHint">正在加载…</span>
+                  </div>
+                  <div class="demo-chips" id="demoChips" role="list"></div>
+                </div>
+              </div>
+              <div class="messages" id="messages" role="log" aria-label="对话记录" aria-relevant="additions text"></div>
+            </div>
+
+            <!-- 输入区 -->
+            <div class="composer">
+              <div class="composer-top">
+                <span class="composer-mode" id="modeHint">自动路由 · 按意图选择最快路径</span>
+                <div class="composer-tools">
+                  <button type="button" class="ghost-btn" id="demoBtn" aria-expanded="false" aria-controls="demoPopover" aria-label="打开演示问题列表">
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-spark"/></svg>演示问题
+                  </button>
+                  <div class="popover" id="demoPopover" hidden role="dialog" aria-label="演示问题">
+                    <div class="popover-head">
+                      <span>挑一个问题试试</span>
+                      <button type="button" class="icon-btn" id="demoPopoverClose" aria-label="关闭演示问题弹层">
+                        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-x"/></svg>
+                      </button>
+                    </div>
+                    <div class="popover-body" id="demoPopoverBody"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="composer-box">
+                <textarea id="input" rows="1" maxlength="2000" enterkeyhint="send"
+                  placeholder="问点什么,比如「出差住宿标准是多少?」"
+                  aria-label="输入你的问题,Enter 发送,Shift+Enter 换行"></textarea>
+                <div class="composer-actions">
+                  <button type="button" class="btn btn-send" id="sendBtn" aria-label="发送问题">
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-send"/></svg>
+                    <span>发送</span>
+                  </button>
+                  <button type="button" class="btn btn-stop" id="stopBtn" hidden aria-label="停止生成">
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-stop"/></svg>
+                    <span>停止</span>
+                  </button>
+                </div>
+              </div>
+              <div class="composer-foot">
+                <span><kbd>Enter</kbd> 发送 · <kbd>Shift</kbd>+<kbd>Enter</kbd> 换行 · <kbd>Esc</kbd> 关闭弹层</span>
+                <span class="session-label" id="sessionLabel"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 右:检索链路 -->
+          <aside class="panel trace-panel" id="tracePanel" aria-label="检索链路可视化">
+            <header class="panel-head">
+              <div class="panel-head-title">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-activity"/></svg>
+                <h2>检索链路</h2>
+                <span class="panel-sub" id="traceSub">等待请求</span>
+              </div>
+              <div class="panel-head-actions">
+                <button type="button" class="icon-btn" id="copyTraceBtn" aria-label="复制本次链路 JSON" title="复制链路 JSON" disabled>
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-copy"/></svg>
+                </button>
+              </div>
+            </header>
+            <div class="trace-body" id="traceBody">
+              <div class="empty-state" id="traceEmpty">
+                <div class="empty-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><use href="#i-activity"/></svg>
+                </div>
+                <p class="empty-title">还没有链路数据</p>
+                <p class="empty-desc">发送一个问题后,这里会实时展示检索阶段耗时、候选命中与分数、证据来源、Agent 工具调用与自检结论。</p>
+                <ul class="empty-list">
+                  <li><span class="dot dot-indigo"></span>阶段时间轴(改写 → 召回 → 融合 → 重排)</li>
+                  <li><span class="dot dot-teal"></span>候选命中与归一化分数条</li>
+                  <li><span class="dot dot-violet"></span>引用证据与回答 [n] 联动</li>
+                  <li><span class="dot dot-amber"></span>token / 成本 / 耗时 / 自检结论</li>
+                </ul>
+              </div>
+              <div id="traceContent" hidden></div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ========== 知识库视图 ========== -->
+      <section class="view" id="view-kb" role="tabpanel" aria-labelledby="tab-kb" tabindex="0" hidden>
+        <div class="kb-layout">
+          <div class="panel kb-list-panel">
+            <header class="panel-head">
+              <div class="panel-head-title">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-db"/></svg>
+                <h2>知识库</h2>
+                <span class="panel-sub" id="kbSub">加载中…</span>
+              </div>
+              <div class="panel-head-actions">
+                <button type="button" class="icon-btn" id="kbRefreshBtn" aria-label="刷新文档列表" title="刷新">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-refresh"/></svg>
+                </button>
+              </div>
+            </header>
+
+            <div class="kb-stats" id="kbStats"></div>
+
+            <div class="kb-filters">
+              <div class="search-box">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-search"/></svg>
+                <input type="search" id="kbSearch" placeholder="搜索标题 / 分类 / doc_id" aria-label="搜索文档">
+              </div>
+              <div class="cat-chips" id="kbCats" role="group" aria-label="按分类过滤"></div>
+            </div>
+
+            <div class="doc-list" id="docList" role="list" aria-label="文档列表"></div>
+          </div>
+
+          <div class="kb-right">
+            <div class="panel kb-detail-panel">
+              <header class="panel-head">
+                <div class="panel-head-title">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-doc"/></svg>
+                  <h2 id="kbDetailTitle">文档分块</h2>
+                  <span class="panel-sub" id="kbDetailSub">选择左侧文档</span>
+                </div>
+                <div class="panel-head-actions">
+                  <button type="button" class="icon-btn" id="kbCopyChunksBtn" aria-label="复制当前文档全部分块" title="复制全部分块" disabled>
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-copy"/></svg>
+                  </button>
+                </div>
+              </header>
+              <div class="kb-detail-body" id="kbDetail">
+                <div class="empty-state">
+                  <div class="empty-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-doc"/></svg></div>
+                  <p class="empty-title">选择一篇文档</p>
+                  <p class="empty-desc">点击左侧任意文档,查看它被切分成的片段(chunk)与原文内容 —— 这正是检索与引用的最小单位。</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel kb-maintain-panel">
+              <header class="panel-head">
+                <div class="panel-head-title">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-upload"/></svg>
+                  <h2>入库与维护</h2>
+                  <span class="panel-sub">上传 / 文本入库 / 全量重建</span>
+                </div>
+              </header>
+              <div class="maintain-grid">
+                <!-- 上传 -->
+                <form class="maintain-card" id="uploadForm">
+                  <h3>上传文件</h3>
+                  <p class="maintain-desc">.md / .txt,UTF-8,单文件 ≤ 5MB,入库后立即可检索。</p>
+                  <label class="field">
+                    <span>选择文件</span>
+                    <input type="file" id="uploadFile" accept=".md,.txt,text/markdown,text/plain" required>
+                  </label>
+                  <label class="field">
+                    <span>标题</span>
+                    <input type="text" id="uploadTitle" maxlength="100" placeholder="留空则用文件名">
+                  </label>
+                  <label class="field">
+                    <span>分类</span>
+                    <input type="text" id="uploadCategory" maxlength="30" placeholder="未分类" list="kbCategories">
+                  </label>
+                  <label class="field">
+                    <span>切分策略</span>
+                    <select id="uploadStrategy">
+                      <option value="recursive">recursive · 递归语义切分</option>
+                      <option value="fixed">fixed · 定长窗口</option>
+                      <option value="semantic">semantic · 语义切分</option>
+                    </select>
+                  </label>
+                  <button type="submit" class="btn btn-primary btn-block" id="uploadSubmit">
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-upload"/></svg>上传入库
+                  </button>
+                </form>
+
+                <!-- 文本入库 -->
+                <form class="maintain-card" id="ingestForm">
+                  <h3>粘贴文本入库</h3>
+                  <p class="maintain-desc">适合快速验证:同 doc_id 覆盖旧版本,不会重复。</p>
+                  <label class="field">
+                    <span>标题</span>
+                    <input type="text" id="ingestTitle" maxlength="100" placeholder="例如:差旅标准补充说明" required>
+                  </label>
+                  <div class="field-row">
+                    <label class="field">
+                      <span>分类</span>
+                      <input type="text" id="ingestCategory" maxlength="30" placeholder="未分类" list="kbCategories">
+                    </label>
+                    <label class="field">
+                      <span>策略</span>
+                      <select id="ingestStrategy">
+                        <option value="recursive">recursive</option>
+                        <option value="fixed">fixed</option>
+                        <option value="semantic">semantic</option>
+                      </select>
+                    </label>
+                  </div>
+                  <label class="field">
+                    <span>正文(Markdown)</span>
+                    <textarea id="ingestText" rows="4" placeholder="至少 20 字…" required></textarea>
+                  </label>
+                  <button type="submit" class="btn btn-primary btn-block" id="ingestSubmit">
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-plus"/></svg>写入知识库
+                  </button>
+                </form>
+
+                <!-- 全量重建 -->
+                <div class="maintain-card">
+                  <h3>全量重建索引</h3>
+                  <p class="maintain-desc">重新读取 data/raw 下全部原始文档,重建向量与 BM25 索引。演示语料很少,通常耗时数秒。</p>
+                  <label class="field">
+                    <span>切分策略</span>
+                    <select id="reindexStrategy">
+                      <option value="recursive">recursive · 递归语义切分</option>
+                      <option value="fixed">fixed · 定长窗口</option>
+                      <option value="semantic">semantic · 语义切分</option>
+                    </select>
+                  </label>
+                  <div class="maintain-warn">
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-alert"/></svg>
+                    会重建全部文档索引,期间检索可能短暂变慢。
+                  </div>
+                  <button type="button" class="btn btn-danger btn-block" id="reindexBtn">
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-refresh"/></svg>重建全部索引
+                  </button>
+                </div>
+              </div>
+              <datalist id="kbCategories"></datalist>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 关于视图 ========== -->
+      <section class="view" id="view-about" role="tabpanel" aria-labelledby="tab-about" tabindex="0" hidden>
+        <div class="about" id="aboutContent">
+          <div class="empty-state">
+            <div class="empty-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-layers"/></svg></div>
+            <p class="empty-title">加载系统信息…</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- 轻量确认弹层 -->
+  <div class="modal-backdrop" id="modalBackdrop" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalBody" id="modal">
+      <h3 id="modalTitle">确认操作</h3>
+      <p id="modalBody"></p>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-ghost" id="modalCancel">取消</button>
+        <button type="button" class="btn btn-danger" id="modalConfirm">确认</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 错误 / 成功提示 -->
+  <div class="toasts" id="toasts" role="status" aria-live="polite"></div>
+
+  <noscript>
+    <div class="noscript">这个演示前端需要 JavaScript 才能运行,请开启后刷新页面。</div>
+  </noscript>
+
+  <script src="/static/app.js" defer></script>
+</body>
+</html>
