@@ -203,6 +203,14 @@ class ChatService:
             t0 = time.perf_counter()
             self.pipeline.bm25.search("预热")
             timings["bm25"] = int((time.perf_counter() - t0) * 1000)
+        # 意图分类器(TinyBERT)首次推理会触发 transformers/torch 导入与权重加载(~5-8s),
+        # 放到预热里,避免第一个真实请求承担这笔开销。
+        t0 = time.perf_counter()
+        try:
+            self.router.classifier.predict("预热")
+            timings["intent"] = int((time.perf_counter() - t0) * 1000)
+        except Exception as exc:  # noqa: BLE001
+            logger.warning("意图分类预热失败: %s", exc)
         if self.pipeline.reranker.enabled:
             t0 = time.perf_counter()
             try:

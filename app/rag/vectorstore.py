@@ -68,23 +68,6 @@ class BaseVectorStore:
     def delete_all(self) -> None:
         raise NotImplementedError
 
-    def save_meta(self, meta: dict) -> None:
-        """记录索引构建信息(embedding 后端/模型/策略),用于启动时一致性校验。"""
-        self.index_dir.mkdir(parents=True, exist_ok=True)
-        with tempfile.NamedTemporaryFile(
-            dir=self.index_dir, suffix=".json", delete=False, mode="w", encoding="utf-8"
-        ) as tmp:
-            json.dump(meta, tmp, ensure_ascii=False, indent=2)
-            os.replace(tmp.name, self.meta_path)
-
-    def load_meta(self) -> dict:
-        if not self.meta_path.exists():
-            return {}
-        try:
-            return json.loads(self.meta_path.read_text(encoding="utf-8"))
-        except (OSError, ValueError):
-            return {}
-
     def persist(self) -> None:
         return None
 
@@ -102,21 +85,7 @@ class NumpyVectorStore(BaseVectorStore):
         self._payload: list[dict] = []
         self._load()
 
-    # ------------------------------------------------------------------ 持久化
-    def _load(self) -> None:
-        if not self.vectors_path.exists() or not self.payload_path.exists():
-            return
-        try:
-            self._vectors = np.load(self.vectors_path).astype(np.float32)
-            self._payload = json.loads(self.payload_path.read_text(encoding="utf-8"))
-            logger.info(
-                "向量库已加载: %d chunks, dim=%d", len(self._payload), self._vectors.shape[1]
-            )
-        except Exception as exc:  # noqa: BLE001  文件损坏时不应阻止启动
-            logger.warning("向量库加载失败,按空库启动: %s", exc)
-            self._vectors = np.zeros((0, 0), dtype=np.float32)
-            self._payload = []
-
+    # ------------------------------------------------------------------ 元信息
     def save_meta(self, meta: dict) -> None:
         """记录索引构建信息(embedding 后端/模型/策略),用于启动时一致性校验。"""
         self.index_dir.mkdir(parents=True, exist_ok=True)
@@ -133,6 +102,21 @@ class NumpyVectorStore(BaseVectorStore):
             return json.loads(self.meta_path.read_text(encoding="utf-8"))
         except (OSError, ValueError):
             return {}
+
+    # ------------------------------------------------------------------ 持久化
+    def _load(self) -> None:
+        if not self.vectors_path.exists() or not self.payload_path.exists():
+            return
+        try:
+            self._vectors = np.load(self.vectors_path).astype(np.float32)
+            self._payload = json.loads(self.payload_path.read_text(encoding="utf-8"))
+            logger.info(
+                "向量库已加载: %d chunks, dim=%d", len(self._payload), self._vectors.shape[1]
+            )
+        except Exception as exc:  # noqa: BLE001  文件损坏时不应阻止启动
+            logger.warning("向量库加载失败,按空库启动: %s", exc)
+            self._vectors = np.zeros((0, 0), dtype=np.float32)
+            self._payload = []
 
     def persist(self) -> None:
         self.index_dir.mkdir(parents=True, exist_ok=True)
