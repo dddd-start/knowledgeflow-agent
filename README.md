@@ -22,15 +22,20 @@
 
 ## 界面
 
-| 对话 + 检索链路 | 知识库管理 |
+| 对话 + 检索链路（quality 模式） | Agent 工具循环 |
 | --- | --- |
-| ![对话](docs/assets/screenshot-chat.png) | ![知识库](docs/assets/screenshot-kb.png) |
+| ![对话](docs/assets/screenshot-chat.png) | ![Agent](docs/assets/screenshot-agent.png) |
 
-| 架构说明页 | 移动端 |
+| 知识库管理 | 架构说明页 |
 | --- | --- |
-| ![关于](docs/assets/screenshot-about.png) | ![移动端](docs/assets/screenshot-mobile.png) |
+| ![知识库](docs/assets/screenshot-kb.png) | ![关于](docs/assets/screenshot-about.png) |
 
-> 全部真实截图：左边回答带 `[n]` 引用，右侧是本次请求的检索链路（阶段耗时、候选、证据、自检结论、token/成本）。
+| 移动端 |
+| --- |
+| ![移动端](docs/assets/screenshot-mobile.png) |
+
+> 全部是真实运行截图：回答带 `[n]` 引用，右侧是本次请求的检索链路（阶段耗时、候选、证据、自检结论、token/成本）；
+> Agent 模式下能看到每次工具调用的入参、输出与耗时。
 
 ## 30 秒跑起来（不需要任何 API Key）
 
