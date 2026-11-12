@@ -16,6 +16,7 @@
 说明:录制时会在页面里注入"光标 + 点击涟漪 + 字幕条 + 片头卡",
 让没有旁白的录屏也能看懂每一步在做什么。这些注入只影响录屏,不修改项目代码。
 """
+
 from __future__ import annotations
 
 import argparse
@@ -41,8 +42,10 @@ OVERLAY_JS = r"""
       #__kf-cursor{position:fixed;left:50%;top:50%;width:26px;height:26px;margin:-13px 0 0 -13px;
         border-radius:50%;border:2px solid #8b9cff;background:rgba(139,156,255,.22);
         box-shadow:0 0 0 1px rgba(0,0,0,.4),0 6px 18px rgba(99,102,241,.45);
-        z-index:2147483647;pointer-events:none;transition:width .12s,height .12s,margin .12s,background .12s}
-      #__kf-cursor.is-down{width:18px;height:18px;margin:-9px 0 0 -9px;background:rgba(139,156,255,.5)}
+        z-index:2147483647;pointer-events:none;
+        transition:width .12s,height .12s,margin .12s,background .12s}
+      #__kf-cursor.is-down{width:18px;height:18px;margin:-9px 0 0 -9px;
+        background:rgba(139,156,255,.5)}
       .__kf-ripple{position:fixed;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;
         border:2px solid rgba(139,156,255,.9);z-index:2147483646;pointer-events:none;
         animation:__kf-rip .55s ease-out forwards}
@@ -57,9 +60,11 @@ OVERLAY_JS = r"""
       #__kf-cap b{color:#a8b4ff;font-weight:700;margin-right:8px}
       #__kf-title{position:fixed;inset:0;display:grid;place-items:center;z-index:2147483644;
         background:radial-gradient(1200px 600px at 50% 30%,#141a2e 0%,#08090c 70%);
-        color:#fff;font:700 40px/1.3 -apple-system,"PingFang SC","Microsoft YaHei",sans-serif;
+        color:#fff;
+        font:700 40px/1.3 -apple-system,"PingFang SC","Microsoft YaHei",sans-serif;
         transition:opacity .45s ease;text-align:center}
-      #__kf-title .sub{margin-top:14px;font-size:16px;font-weight:500;color:#9aa4c8;letter-spacing:.5px}
+      #__kf-title .sub{margin-top:14px;font-size:16px;font-weight:500;
+        color:#9aa4c8;letter-spacing:.5px}
       #__kf-title .logo{width:64px;height:64px;border-radius:16px;margin:0 auto 22px;
         background:linear-gradient(135deg,#6366f1,#22d3ee);display:grid;place-items:center;
         font-size:30px;box-shadow:0 18px 50px rgba(99,102,241,.45)}
@@ -164,7 +169,8 @@ class Recorder:
 
     def scroll_panel(self, page, selector: str, dy: int, pause: int = 900) -> None:
         page.evaluate(
-            "(args) => { const el = document.querySelector(args[0]); if (el) el.scrollBy({top: args[1], behavior: 'smooth'}); }",
+            "(args) => { const el = document.querySelector(args[0]);"
+            " if (el) el.scrollBy({top: args[1], behavior: 'smooth'}); }",
             [selector, dy],
         )
         page.wait_for_timeout(pause)
@@ -207,7 +213,8 @@ class Recorder:
         self.caption(page, "③ 高质量模式|改写 + 自检:回答前先核对证据")
         self.ask(page, "出差住宿标准是多少？超标的怎么审批？", pause_after=1600)
         page.evaluate(
-            "() => document.querySelector('.msg-assistant:last-child')?.scrollIntoView({block:'center'})"
+            "() => document.querySelector('.msg-assistant:last-child')"
+            "?.scrollIntoView({block:'center'})"
         )
         page.wait_for_timeout(1800)
 
@@ -305,11 +312,24 @@ def transcode(ffmpeg: str, raw: Path, out_dir: Path) -> tuple[Path, Path, Path]:
 
     subprocess.run(
         [
-            ffmpeg, "-y", "-i", str(raw),
-            "-vf", "fps=30,scale=1440:-2:flags=lanczos",
-            "-c:v", "libx264", "-preset", "medium", "-crf", "23",
-            "-pix_fmt", "yuv420p", "-movflags", "+faststart",
-            "-an", str(mp4),
+            ffmpeg,
+            "-y",
+            "-i",
+            str(raw),
+            "-vf",
+            "fps=30,scale=1440:-2:flags=lanczos",
+            "-c:v",
+            "libx264",
+            "-preset",
+            "medium",
+            "-crf",
+            "23",
+            "-pix_fmt",
+            "yuv420p",
+            "-movflags",
+            "+faststart",
+            "-an",
+            str(mp4),
         ],
         check=True,
         capture_output=True,
@@ -317,10 +337,15 @@ def transcode(ffmpeg: str, raw: Path, out_dir: Path) -> tuple[Path, Path, Path]:
     # README 里自动播放的 GIF:720 宽、12fps、调色板量化
     subprocess.run(
         [
-            ffmpeg, "-y", "-i", str(mp4),
+            ffmpeg,
+            "-y",
+            "-i",
+            str(mp4),
             "-vf",
             "fps=12,scale=720:-1:flags=lanczos,split[a][b];[a]palettegen=max_colors=192[p];[b][p]paletteuse=dither=bayer:bayer_scale=4",
-            "-loop", "0", str(gif),
+            "-loop",
+            "0",
+            str(gif),
         ],
         check=True,
         capture_output=True,
