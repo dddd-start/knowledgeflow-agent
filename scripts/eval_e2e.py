@@ -96,10 +96,12 @@ def main() -> int:
 
     rows = []
     latencies, tokens, costs = [], [], []
-    for item in eval_items:
+    # 每条问题用独立 session:共用 session 会把历史问答拼进 prompt,
+    # token 与延迟随题号线性增长(第一版踩过这个坑),评测必须隔离上下文。
+    for idx, item in enumerate(eval_items):
         started = time.perf_counter()
         result = collect_events(
-            service.answer(item["query"], mode=args.mode, stream=False, session_id="eval")
+            service.answer(item["query"], mode=args.mode, stream=False, session_id=f"eval-{idx}")
         )
         elapsed = int((time.perf_counter() - started) * 1000)
         citations = result.get("citations", [])
@@ -131,9 +133,11 @@ def main() -> int:
 
     # ---- OOS 拒答 ----
     oos_rows = []
-    for item in oos_items:
+    for idx, item in enumerate(oos_items):
         result = collect_events(
-            service.answer(item["query"], mode=args.mode, stream=False, session_id="eval-oos")
+            service.answer(
+                item["query"], mode=args.mode, stream=False, session_id=f"eval-oos-{idx}"
+            )
         )
         oos_rows.append(
             {

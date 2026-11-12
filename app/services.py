@@ -218,6 +218,12 @@ class ChatService:
                 "rewrite": get_prompt_manager().get_version("rewrite"),
                 "self_check": get_prompt_manager().get_version("self_check"),
             },
+            "retrieval": {
+                "rewrite": bool(self.cfg.rewrite_enabled),
+                "hyde": bool(self.cfg.hyde_enabled),
+                "rerank": bool(self.cfg.rerank_enabled),
+                "self_check": bool(self.cfg.self_check_enabled),
+            },
             "kb": self.pipeline.stats(),
             "offline_demo": self.cfg.offline_demo,
             "modes": ["auto", "fast", "quality", "agent", "agentic"],

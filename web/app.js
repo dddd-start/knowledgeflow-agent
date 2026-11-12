@@ -72,6 +72,25 @@
     }
   };
 
+  /**
+   * 按后端 /api/meta 的 retrieval 开关动态修正模式说明。
+   * 默认配置里 HyDE / 重排是关的,界面不能写死"改写 + HyDE + 重排"误导观众。
+   */
+  function applyRetrievalMeta(meta) {
+    var r = (meta && meta.retrieval) || null;
+    if (!r) return;
+    var steps = [];
+    if (r.rewrite !== false) steps.push('查询改写');
+    if (r.hyde) steps.push('HyDE');
+    steps.push('混合检索');
+    if (r.rerank) steps.push('重排');
+    if (r.self_check !== false) steps.push('幻觉自检');
+    MODE_META.quality.hint = '高质量 · ' + steps.join(' + ');
+    MODE_META.quality.desc = '在快路径之上叠加 ' + steps.join('、') +
+      (r.hyde || r.rerank ? '' : '(HyDE/重排默认关闭,可配置开启)') + ',更准但更慢。';
+    updateModeHint();
+  }
+
   /** 路由 path 的中文名(meta 事件里的 path 字段)。 */
   var PATH_META = {
     rag: 'RAG 检索',
@@ -2624,7 +2643,7 @@
     pipeline.push('<section class="about-hero">' +
       '<h2>KnowledgeFlow · 企业知识库智能问答 Agent</h2>' +
       '<p>面向面试演示的完整 RAG 系统:意图路由决定走哪条链路,混合检索(向量 + BM25 + RRF)负责召回,' +
-      '重排与幻觉自检负责质量兜底,Agent 工具循环与迭代检索负责复杂问题。' +
+      '幻觉自检负责质量兜底(重排可按需开启),Agent 工具循环与迭代检索负责复杂问题。' +
       '右侧「检索链路」把每一次召回、融合、重排、自检都实时画出来,回答里的 [n] 可以逐条回溯到原文片段。</p>' +
       '<div class="about-hero-tags">' +
       aboutTag('原生 JS · 无构建 · 无 CDN') +
@@ -2788,6 +2807,7 @@
     try {
       const meta = await httpJSON(API.meta, {}, FETCH_TIMEOUT);
       state.meta = meta || null;
+      applyRetrievalMeta(state.meta);
       if (meta && Array.isArray(meta.modes) && meta.modes.length) {
         state.modes = meta.modes.slice();
         if (state.modes.indexOf(state.mode) === -1) state.mode = state.modes[0];
