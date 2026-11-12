@@ -1,0 +1,22 @@
+# 安装:
+#   sudo cp deploy/systemd/knowledgeflow.service /etc/systemd/system/
+#   sudo systemctl daemon-reload && sudo systemctl enable --now knowledgeflow
+[Unit]
+Description=KnowledgeFlow 企业知识库智能问答 Agent
+After=network.target
+
+[Service]
+Type=simple
+User=knowledgeflow
+WorkingDirectory=/opt/knowledgeflow
+EnvironmentFile=-/opt/knowledgeflow/.env
+ExecStart=/usr/bin/env bash -lc 'cd /opt/knowledgeflow && .venv/bin/python -m uvicorn app.api.main:app --host 0.0.0.0 --port 8000 --workers 1'
+Restart=always
+RestartSec=3
+# 模型/索引都在本地,限制内存防止误伤宿主
+MemoryMax=4G
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
