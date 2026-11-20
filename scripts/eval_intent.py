@@ -46,6 +46,11 @@ def confusion_matrix(gold: list[str], pred: list[str], labels: list[str]) -> lis
     return matrix
 
 
+def _p95_index(n: int) -> int:
+    """P95 下标(最近秩法),单独抽出来避免行过长。"""
+    return min(n - 1, int(n * 0.95))
+
+
 def evaluate(name: str, classifier, items: list[dict]) -> dict:
     # 先预热一次(模型加载 / 首次前向),否则单条延迟会被冷启动均摊成几十毫秒
     classifier.predict(items[0]["text"])
@@ -70,7 +75,7 @@ def evaluate(name: str, classifier, items: list[dict]) -> dict:
         "labels": labels,
         "latency_ms_per_sample": round(elapsed * 1000 / len(items), 3),
         "latency_ms_p50": round(sorted(latencies)[len(latencies) // 2], 3),
-        "latency_ms_p95": round(sorted(latencies)[min(len(latencies) - 1, int(len(latencies) * 0.95))], 3),
+        "latency_ms_p95": round(sorted(latencies)[_p95_index(len(latencies))], 3),
         "misses": [
             {"text": item["text"], "gold": g, "pred": p}
             for item, g, p in zip(items, gold, pred, strict=False)

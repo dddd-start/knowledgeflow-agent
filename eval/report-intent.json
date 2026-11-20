@@ -103,7 +103,7 @@
       ],
       "latency_ms_per_sample": 0.004,
       "latency_ms_p50": 0.003,
-      "latency_ms_p95": 0.005,
+      "latency_ms_p95": 0.006,
       "misses": [
         {
           "text": "南昌明天要穿外套吗",
@@ -257,9 +257,9 @@
         "small_talk",
         "weather"
       ],
-      "latency_ms_per_sample": 8.689,
-      "latency_ms_p50": 7.859,
-      "latency_ms_p95": 14.462,
+      "latency_ms_per_sample": 8.324,
+      "latency_ms_p50": 7.94,
+      "latency_ms_p95": 10.763,
       "misses": [
         {
           "text": "北京时间现在几点",
