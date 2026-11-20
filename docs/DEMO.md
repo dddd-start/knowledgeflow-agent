@@ -131,4 +131,4 @@ make demo-video                                      # 或 python scripts/record
 - `docs/assets/demo.gif`：README 里自动播放的压缩版；
 - `docs/assets/demo-poster.png`：封面图。
 
-成片 65 秒；录制墙钟耗时约 70~90 秒（取决于模型延迟），期间会真实消耗若干次问答的 token。
+成片约 74 秒；录制墙钟耗时略长（取决于模型延迟），期间会真实消耗若干次问答的 token。

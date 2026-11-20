@@ -23,7 +23,7 @@
 
 ## 演示视频
 
-[▶ 观看 65 秒完整演示（MP4，2.5MB）](docs/assets/demo.mp4)
+[▶ 观看 74 秒完整演示（MP4，2.5MB）](docs/assets/demo.mp4)
 
 ![演示动图](docs/assets/demo.gif)
 

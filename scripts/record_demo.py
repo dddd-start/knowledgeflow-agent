@@ -9,7 +9,7 @@
     python scripts/record_demo.py --url http://127.0.0.1:8000 --out docs/assets
 
 产出:
-    docs/assets/demo.mp4  (H.264, 适合发微信/GitHub 链接)
+    docs/assets/demo.mp4  (H.264, 适合在 IM / GitHub 中分享)
     docs/assets/demo.gif  (压缩版,README 里可直接自动播放)
     docs/assets/demo-poster.png (封面图)
 
